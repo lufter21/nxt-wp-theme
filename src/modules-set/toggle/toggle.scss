@@ -1,0 +1,37 @@
+.toggle{
+	width: 50px;
+	height: 20px;
+	background: #fff;
+	border: 2px solid $bk;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	&:before{
+		@extend %ab;
+		width: 100%;
+		height: 100%;
+		background: $gy;
+		position: absolute;
+		top: 0;
+		right: 38px;
+		transition: .3s;
+	}
+	&:after{
+		@extend %ab;
+		width: 16px;
+		height: 16px;
+		background: $be;
+		border-radius: 50%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		transition: .3s;
+	}
+	&.toggled{
+		&:before,
+		&:after{
+			transform: translate(30px);
+		}
+	}
+}

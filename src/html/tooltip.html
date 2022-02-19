@@ -1,0 +1,66 @@
+@@include('_head.html', {"title": "Bubble"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "bubble", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+
+	<div class="section">
+
+		<div class="row row_wrp">
+			<div class="col-12">
+				<h1 class="title">Tooltips</h1>
+			</div>
+		</div>
+
+		<div class="row row_wrp ta-c" style="margin-bottom: 50px">
+			<div class="col-3 sm-col-4 col-right">
+				<button class="js-tooltip" data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit.">Bubble 1</button>
+			</div>
+			<div class="col-3 sm-col-4">
+				<button class="js-tooltip" data-tooltip="Incidunt officia fugit doloremque optio et commodi, aliquid ipsam odio in sed molestiae soluta est, eligendi praesentium quos, nulla ut dolor accusamus.">Bubble 2</button>
+			</div>
+			<div class="col-3 sm-col-4 xs-col-6">
+				<button class="js-tooltip-hov" data-tooltip="Eligendi praesentium quos, nulla ut dolor accusamus." data-tooltip-class="bubble_rd">Bubble 3 Hover</button>
+			</div>
+			<div class="col-3 sm-col-4 xs-col-6">
+				<button class="js-tooltip-hov" data-tooltip="Incidunt officia fugit doloremque optio et commodi, aliquid ipsam odio in sed molestiae soluta est, eligendi praesentium quos, nulla ut dolor accusamus.">Bubble 4 Hover</button>
+			</div>
+		</div>
+
+		<div class="row row_wrp ta-c" style="margin-bottom: 50px">
+			<div class="col-3 sm-col-4 col-right">
+				<button class="js-tooltip-bot" data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit.">Bubble 1</button>
+			</div>
+			<div class="col-3 sm-col-4">
+				<button class="js-tooltip-right" data-tooltip="Incidunt officia fugit doloremque optio et commodi, aliquid ipsam odio in sed molestiae soluta est, eligendi praesentium quos, nulla ut dolor accusamus.">Bubble 2</button>
+			</div>
+			<div class="col-3 sm-col-4 xs-col-6">
+				<button class="js-tooltip-hov" data-tooltip="Eligendi praesentium quos, nulla ut dolor accusamus." data-tooltip-class="bubble_rd">Bubble 3 Hover</button>
+			</div>
+			<div class="col-3 sm-col-4 xs-col-6">
+				<button class="js-tooltip-hov" data-tooltip="Incidunt officia fugit doloremque optio et commodi, aliquid ipsam odio in sed molestiae soluta est, eligendi praesentium quos, nulla ut dolor accusamus.">Bubble 4 Hover</button>
+			</div>
+		</div>
+
+	</div>
+
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+</body>
+</html>

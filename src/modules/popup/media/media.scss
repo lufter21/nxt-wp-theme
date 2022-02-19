@@ -1,0 +1,86 @@
+.popup-media{
+    width: auto;
+    max-width: none;
+    .popup{
+        &__inner{
+            padding: 15px;
+        }
+        &-close-btn{
+            right: 3px;
+            top: 38px;
+            background: #ffffff;
+            width: 30px;
+            height: 30px;
+            &::before,
+            &::after{
+                width: 100%;
+                left: 0;
+            }
+        }
+    }
+    &__box{
+        position: relative;
+    }
+    &__image{
+        max-width: 85vw;
+        max-height: 70vh;
+        display: none;
+        transform-origin: 0 0;
+        &_visible{
+            display: inline-block;
+        }
+    }
+    &__video{
+        width: 85vw;
+        max-width: 130vh;
+        display: none;
+        &_visible{
+            display: block;
+        }
+    }
+    &__caption{
+        font-size: 14px;
+        padding: 10px 50px;
+        background: #fff;
+    }
+    &__arr{
+        position: absolute;
+        width: 12px;
+        height: 20px;
+        top: 50%;
+        margin-top: -10px;
+        z-index: 3;
+        &_l{
+            left: 53px;
+            background-position: -24px -72px;
+        }
+        &_r{
+            right: 53px;
+            background-position: -38px -72px;
+        }
+    }
+    &__zoom{
+        position: absolute;
+        width: 12px;
+        height: 20px;
+        top: 20px;
+        z-index: 3;
+        &_min{
+            left: 20px;
+        }
+        &_plus{
+            left: 40px;
+        }
+    }
+    &__dots{
+        list-style: none;
+        display: flex;
+        &-btn{
+            width: 12px;
+            height: 12px;
+            &.active{
+                background: $bk;
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@@include('_head.html', {"title": "Share"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "share", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+
+	<div class="section">
+		<div class="row">
+			<div class="col-12">
+				<h1>Share</h1>
+			</div>
+		</div>
+
+		
+		<div class="row row_col-middle" style="margin-bottom: 50px">
+			<div class="col">
+				<button type="button" data-network="vk" class="js-share-btn vk-btn"></button>
+			</div>
+			<div class="col">
+				<button type="button" data-network="fb" class="js-share-btn fb-btn"></button>
+			</div>
+			<div class="col">
+				<button type="button" data-network="tw" class="js-share-btn tw-btn"></button>
+			</div>
+			<div class="col">
+				<button type="button" data-network="ok" class="js-share-btn ok-btn"></button>
+			</div>
+		</div>
+
+	</div>
+
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+@@include('_head.html', {"title": "Home page"})
+
+<!--HEADER/-->
+<!-- @@include('../modules/header/header.html', {"menu_item_current": "home", "user_item": "logged", "user_item": "not_logged"}) -->
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+	<div id="actions-scroll" class="scrollbox scrollbox_screens">
+		<div class="scrollbox__window" style="position: fixed;">
+			<div style="height: 80vh; background: darkcyan;" data-action-element="s1" class="scrollbox__screen"></div>
+			
+			<div style="height: 200vh; background: rgb(72, 0, 139); top: 100%; z-index: 2;" data-action-element="t1" class="scrollbox__screen"></div>
+
+			<div style="height: 500vh; background: rgb(12, 139, 0); opacity: 0; border-bottom: 10px solid yellow;" data-action-element="ms" class="scrollbox__screen"></div>
+			
+			<div class="scrollbox__vertical-bar"></div>
+		</div>
+	</div>
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+<!-- @@include('../modules/footer/footer.html') -->
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+<!-- @@include('../modules/popup/popup.html') -->
+<!--/POPUPs-->
+
+<!-- @@include('../images/sprite-symbol.svg') -->
+
+@@include('_foot.html')
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+/*form error*/
+.form-error-tip{
+    font-size: 13px;
+    color: $rd;
+    text-align: center;
+    padding-top: 10px;
+    display: none;
+    
+}
+
+.form-error{
+    .form-error-tip{
+        display: block;
+    }
+}
+
+/*field error*/
+.field-error-tip{
+    font-size: 12px;
+    color: $rd;
+    padding-top: 3px;
+    display: none;
+}
+
+.field-error{
+    .field-error-tip,
+    & + .field-error-tip{
+        display: block;
+    }
+    input,
+    textarea,
+    .var-height-textarea_middle,
+    .select__button{
+        border-color: $rd;
+    }
+}
+
+.field-success{
+    &::after{
+        @extend %ab;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        margin-top: -5px;
+        background: $gn;
+        z-index: 2;
+    }
+}
+
+.file-error{
+    color: $rd;
+}

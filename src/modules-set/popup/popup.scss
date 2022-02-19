@@ -1,0 +1,101 @@
+/*popup*/
+.popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 21;
+    text-align: center;
+    background: rgba(0,0,0,.5);
+    font-size: 0;
+    opacity: 0;
+    transition: opacity .3s;
+    &:before{
+        display: inline-block;
+        content: "";
+        height: 100%;
+        vertical-align: middle;
+    }
+    &__window{
+        display: none;
+        vertical-align: middle;
+        width: 100%;
+        max-width: r(470);
+        padding: r(35) 0;
+        font-size: 1rem;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, 0);
+        opacity: 0;
+        transition: opacity .3s;
+        &_visible{
+            position: static;
+            transform: none;
+        }
+    }
+    &__inner{
+        position: relative;
+        background: #FFF;
+        padding: r(20) r(35) r(35);
+        border-radius: r(11);
+        box-shadow: r(10) r(10) 0 $gy;
+    }
+    &__title{
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    &__message{
+        font-size: r(26);
+        line-height: 1.2;
+    }
+    &-close-btn{
+        @extend %btn;
+        width: r(25);
+        height: r(25);
+        position:absolute;
+        right: r(25);
+        top: r(25);
+        z-index: 4;
+        backface-visibility: hidden;
+        &:after,
+        &:before{
+            @extend %ab;
+            width: 130%;
+            height: 2px;
+            background: $bk;
+            position: absolute;
+            left: -15%;
+            top: 50%;
+            margin-top: -1px;
+            transition: .21s;
+        }
+        &:after{
+            transform: rotate(-45deg);
+        }
+        &:before{
+            transform: rotate(45deg);
+        }
+        &:hover{
+            &:after,
+            &:before{
+                background: $gy;
+            }
+        }
+    }
+}
+
+/*popup-message*/
+.popup-message{
+    max-width: 560px;
+}
+
+.popup-is-opened{
+    position: fixed;
+    left: 0;
+    right: 0;
+}

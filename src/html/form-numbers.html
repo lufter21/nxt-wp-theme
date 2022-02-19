@@ -1,0 +1,43 @@
+@@include('_head.html', {"title": "Form"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "form", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+    
+    <div class="section">
+        <form id="form" action="send.php" method="POST" enctype="multipart/form-data" class="form">
+            <div class="row row_wrp">
+                <div class="col-4">
+                    <div class="number">
+                        <div class="number__comp">
+                            <button type="button" class="number__btn number__btn_min" data-action="-1"></button>
+                            <input type="text" class="number__input" value="0">
+                            <button type="button" class="number__btn number__btn_plus" data-action="1"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>  
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+
+</body>
+
+</html>

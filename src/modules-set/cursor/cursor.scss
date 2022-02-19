@@ -1,0 +1,43 @@
+.cursor{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    width: rem(34);
+    @include fixprop;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .2);
+    border: 1px solid #6c61a1;
+    pointer-events: none;
+    visibility: hidden;
+    transition: width .35s;
+    &[data-class="hover-a"]{
+        width: rem(42);
+        background: rgba(241, 89, 51, .7);
+        border: none;
+    }
+    &[data-class="hover-btn"]{
+        width: rem(42);
+        border: 1px solid #ffffff;
+        background: $gy;
+        opacity: .5;
+    }
+    &_visible{
+        visibility: visible;
+    }
+    &-wrap{
+        @extend %fwh;
+        position: fixed;
+        z-index: 99;
+        overflow: hidden;
+        pointer-events: none;
+    }
+}
+
+@media(min-width: 1101px){
+    .curs-main,
+    .curs-btn,
+    .curs-link{
+        cursor: none;
+    }
+}

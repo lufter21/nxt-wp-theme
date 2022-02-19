@@ -1,0 +1,51 @@
+@@include('_head.html', {"title": "Timer"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "timer", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+
+	<div class="section">
+
+		<div class="row">
+			<div class="col-12">
+				<h1>Timer</h1>
+			</div>
+		</div>
+
+		<div class="row row_col-middle" style="margin-bottom: 50px">
+			<div class="col-3">
+				<span id="timer"></span>
+			</div>
+			<div class="col-3">
+				<span id="timer-2"></span>
+			</div>
+			<div class="col-3">
+				<span id="stopwatch"></span>
+			</div>
+			<div class="col-3">
+				<span id="stopwatch-1"></span>
+			</div>
+		</div>
+
+	</div>
+
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+</body>
+</html>

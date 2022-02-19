@@ -1,0 +1,85 @@
+<div class="popup">
+    
+    <div id="popup-1" class="popup__window" style="max-width: 550px;">
+        <div class="popup__inner" style="height: 100px;">
+            <button class="js-popup-close popup-close-btn"></button>
+            <a href="#popup-2" data-popup="#popup-2" class="js-open-popup">POPUP 2</a>
+        </div> 
+    </div>
+    
+    <div id="popup-2" class="popup__window" style="max-width: 550px;">
+        <div class="popup__inner" style="height: 1300px;">
+            <button class="js-popup-close popup-close-btn"></button>
+            <a href="#message-popup-2" data-popup="#message-popup-2" class="js-open-popup">POPUP msg</a>
+        </div>
+    </div>
+    
+    <!--Media Popup/-->
+    <div id="media-popup" class="popup-media popup__window">
+        <div class="popup__inner">
+            <button class="js-popup-close popup-close-btn"></button>
+            
+            <div class="popup-media__box">
+                
+                <div id="popup-scroll-image" class="popup-media__img scrollbox">
+                    <div class="scrollbox__window">
+                        <div class="scrollbox__inner">
+                            <img src="#" class="popup-media__image" alt="photo">
+                        </div>
+                    </div>
+                    <div class="scrollbox__vertical-bar"></div>
+				    <div class="scrollbox__horizontal-bar"></div>
+                </div>
+                
+                <!-- <div class="popup-media__video">
+                    <a href="#" class="popup-media__play"></a>
+                    <iframe src="" class="popup-media__iframe" allowfullscreen></iframe>
+                </div> -->
+                
+                <div class="video popup-media__video">
+                    <div class="video__preview">
+                        <img src="#" alt="thumbnail" class="popup-media__preview">
+                    </div>
+                    <button type="button" data-src="" class="video__btn-play popup-media__btn-play"></button>
+                    <div class="video__frame"></div>
+                </div>
+                
+                <button class="popup-media__arr popup-media__arr_l" data-dir="prev"></button>
+                <button class="popup-media__arr popup-media__arr_r" data-dir="next"></button>
+
+                <button class="popup-media__zoom popup-media__zoom_min" data-dir="min">-</button>
+                <button class="popup-media__zoom popup-media__zoom_plus" data-dir="plus">+</button>
+                
+                <ul class="popup-media__dots"></ul>
+            </div>
+            
+            <div class="popup-media__caption">
+                <!-- caption -->
+            </div>
+        </div>
+    </div>
+    <!--/Media Popup-->
+    
+</div>
+
+<div class="popup" data-btn-close-only="true">
+    <!--Message Popup/-->
+    <div id="message-popup" class="popup-message popup__window">
+        <div class="popup__inner">
+            <button class="js-popup-close popup-close-btn"></button>
+            <div class="popup__message">
+                <!-- message html -->
+            </div>
+        </div>
+    </div>
+    <!--/Message Popup-->
+
+    <div id="message-popup-2" class="popup-message popup__window">
+        <div class="popup__inner">
+            <button class="js-popup-close popup-close-btn"></button>
+            <div class="popup__message">
+                Some message
+            </div>
+        </div>
+    </div>
+</div>

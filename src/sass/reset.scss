@@ -1,0 +1,111 @@
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+a,
+img,
+strong,
+b,
+i,
+sup,
+ol,
+ul,
+li,
+pre,
+code,
+form,
+label,
+input,
+textarea,
+button,
+hr,
+figure,
+figcaption,
+header,
+footer,
+main,
+section,
+nav,
+article,
+aside {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    line-height: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+header,
+footer,
+main,
+section,
+nav,
+article,
+aside {
+    display: block;
+}
+
+button {
+    display: inline-block;
+    line-height: normal;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+input {
+    line-height: normal;
+    -webkit-appearance: none;
+}
+
+a {
+    -webkit-appearance: none;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+b,
+strong {
+    font-weight: 700;
+}
+
+i {
+    font-style: italic;
+}
+
+sup {
+    font-size: .85em;
+    position: relative;
+    bottom: .5em;
+}
+
+code {
+    display: inline-block;
+}
+
+html,
+body {
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1;
+}

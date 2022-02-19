@@ -1,0 +1,189 @@
+// after-before
+%ab{
+    display: block;
+    content: "";
+    box-sizing: border-box;
+}
+
+// full Width Height
+%fwh{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+// cover background image
+%c-bg-img{
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+// center image wrapper
+%c-img-wr{
+    font-size: 0;
+    text-align: center;
+    &::before{
+        display: inline-block;
+        content: "";
+        height: 100%;
+        vertical-align: middle;
+    }
+    img{
+        vertical-align: middle;
+    }
+}
+
+// responsive image
+%r-img{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+// fullwidth image
+%fw-img{
+    width: 100%;
+    height: auto;
+}
+
+// filled image
+%fill-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+// flex center
+%fx-c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// button
+%btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: normal;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: bottom;
+    border: none;
+    background: none;
+    user-select: none;
+    position: relative;
+    transition: .21s;
+    span{
+        display: block;
+        width: 100%;
+    }
+}
+
+%btn-icon{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+}
+
+// icon button
+%icon-btn{
+    display: inline-block;
+    background: none;
+    border: none;
+    -webkit-appearance: none;
+    transition: .21s;
+    position: relative;
+}
+
+// link
+%link{
+    display: inline-block;
+    line-height: normal;
+    text-decoration: none;
+    transition: .21s;
+}
+
+// icon link
+%icon-link{
+    display: inline-block;
+    line-height: normal;
+    position: relative;
+    text-decoration: none;
+    transition: .21s;
+    &::before{
+        display: block;
+        content: "";
+        position: absolute;
+        top: 50%;
+    }
+}
+
+// icon
+%icon{
+    display: inline-block;
+    position: relative;
+    transition: .21s;
+    &::before,
+    svg{
+        display: block;
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: .21s;
+    }
+}
+%ico-spr{
+    display: inline-block;
+    position: relative;
+    &::before,
+    &::after{
+        display: block;
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+%ico-sym{
+    display: inline-block;
+    svg{
+        display: block;
+    }
+}
+
+// table
+%table{
+    width: 100%;
+    border-collapse: collapse;
+    tr{
+        td, th{
+            &:last-child{
+                text-align: right;
+            }
+            &:first-child{
+                text-align: left;
+            }
+        }
+    }
+}
+
+// tile
+%tile-wrap{
+    & > div{
+        display: flex;
+    }
+}
+%tile-item{
+    flex: 1 1 100%;
+    max-width: 100%;
+}

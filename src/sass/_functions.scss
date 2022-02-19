@@ -1,0 +1,42 @@
+// rem
+$base-font-size: 16;
+@function rem($px, $base: $base-font-size) {
+    @return ($px / $base) * 1rem;
+}
+@function r($px, $base: $base-font-size) {
+    @return ($px / $base) * 1rem;
+}
+
+// em
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+@function e($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+// percent
+@function per($px, $base) {
+    @return $px * (100 / $base) * 1%;
+}
+
+// vw
+$def-vw-base: 1920;
+@function vw($px, $base: $def-vw-base) {
+    @return $px * (100 / $base) * 1vw;
+}
+
+// vh
+@function vh($px, $base) {
+    @return $px * (100 / $base) * 1vh;
+}
+
+// vmax
+@function vmax($px, $base) {
+    @return $px * (100 / $base) * 1vmax;
+}
+
+// vmin
+@function vmin($px, $base) {
+    @return $px * (100 / $base) * 1vmin;
+}

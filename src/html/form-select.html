@@ -1,0 +1,147 @@
+@@include('_head.html', {"title": "Form Select"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html'', {"menu_item_current": "form_select", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+    
+    <div class="section" style="margin-bottom: 300px;">
+        
+        <form id="custom-form" action="send.php" method="POST" enctype="multipart/form-data" class="form">
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2">Standart select</div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6">
+                    <div class="form__field">
+                        <select class="custom-select" name="favorite-animal" data-placeholder="Select an animal*" data-required="true">
+                            <option value="monkey">Monkey</option>
+                            <option value="cat">Cat</option>
+                            <option>Dog</option>
+                            <option value="lion" data-second-value="lionID">Lion</option>
+                            <option value="crocodile">Crocodile</option>
+                            <option value="elephant">Elephant</option>
+                            <option value="other" data-hide-elements="#hide-animal-field">Hide</option>
+                            <option value="other" data-show-elements="#other-animal-field">Other</option>
+                        </select>
+                        <div class="field-error-tip">Select an animal</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div id="other-animal-field" class="form__field hidden">
+                        <input type="text" data-required="true" placeholder="Other animal" class="form__text-input" value="">
+                        <div class="field-error-tip">Enter other animal</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div id="hide-animal-field" class="form__field">
+                        <input type="text" data-required="true" placeholder="Other animal" class="form__text-input" value="">
+                        <div class="field-error-tip">Enter other animal</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2">Multiple select</div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6">
+                    <div class="form__field">
+                        <select class="custom-select" name="pets[]" multiple data-placeholder="Select pets*" data-required="true">
+                            <option value="cat">Cat</option>
+                            <option value="dog">Dog</option>
+                            <option value="parrot">Parrot</option>
+                            <option value="cavy">Cavy</option>
+                            <option value="hamster">Hamster</option>
+                            <option value="other" data-show-elements="#other-pets-field">Other</option>
+                        </select>
+                        <div class="field-error-tip">Select pets</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div id="other-pets-field" class="form__field hidden">
+                        <input type="text" data-required="true" placeholder="Other pets" class="form__text-input" value="">
+                        <div class="field-error-tip">Enter other pets</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="form__field">
+                        <select class="custom-select" name="pets[]" data-placeholder="Select pet*" data-required="true" data-hide-selected-option="true">
+                            <option value="cat" selected>Cat</option>
+                            <option value="dog">Dog</option>
+                            <option value="parrot">Parrot</option>
+                            <option value="cavy">Cavy</option>
+                        </select>
+                        <div class="field-error-tip">Select pets</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2 mb-25">Select with external data</div>
+                    <div class="txt c-gray">
+                        Get data from https://get.dealersair.com/api/geo/
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6">
+                    <div class="form__field countries">
+                        <select class="custom-select" name="country" data-placeholder="Select your country*" data-required="true">
+                            <!--options-->
+                        </select>
+                        <div class="field-error-tip">Select country</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form__field cities">
+                        <select class="custom-select" name="city" data-placeholder="Select your city*" data-required="true" data-empty-text="Select country first">
+                            <!--options-->
+                        </select>
+                        <div class="field-error-tip">Select city</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6">
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+            
+            <div class="form-error-tip">Form error</div>
+        </form>
+        
+    </div>
+    
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+
+</body>
+</html>

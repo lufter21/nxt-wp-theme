@@ -1,0 +1,324 @@
+@@include('_head.html', {"title": "Form"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "form", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+    
+    <div class="section wrap">
+        
+        <form id="form" action="send.php" method="POST" enctype="multipart/form-data" class="form">
+            
+            <div class="row">
+                <div class="col-4">
+                    <div class="form__field" data-form-error-text="Please, enter your name" data-form-error-text-2="Please, enter a valid name">
+                        <input type="text" data-type="name" data-required="true" placeholder="Name*"
+                        class="form__text-input">
+                        <div class="field-error-tip" data-error-text-2="Enter a valid name">
+                            Enter your name
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form__field">
+                        <input type="text" data-type="email" data-required="true" placeholder="E-mail*"
+                        class="form__text-input">
+                        <div class="field-error-tip" data-error-text-2="Enter a valid e-mail address">
+                            Enter your e-mail
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form__field">
+                        <input id="some-input-id" type="text" data-type="tel" data-required="true" placeholder="Phone number*" class="form__text-input">
+                        <div class="field-error-tip" data-error-text-2="Enter a valid phone number">
+                            Enter your phone number
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-4">
+                    <div class="form__field">
+                        <input type="text" data-type="date" data-min-years-passed="18" data-required="true"
+                        placeholder="Date of birth*" class="form__text-input">
+                        <div class="field-error-tip" data-error-text-2="Enter a valid birth date" data-error-text-3="You must be of legal age">
+                            Enter your birth date
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="form__field">
+                        <textarea data-type="txt" name="message" placeholder="Message*" data-required="true"
+                        class="form__textarea"></textarea>
+                        <div class="field-error-tip" data-error-text-2="Unacceptable symbols">Enter message</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2">Few questions</div>
+                </div>
+            </div>
+            
+            <div class="fieldset">
+                
+                <div class="fieldset__item">
+                    
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form__field">
+                                <input type="text" data-required="true" placeholder="Nickname*"
+                                class="form__text-input step-fs1-inp">
+                                <div class="field-error-tip">Enter your nickname</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="form__button btn js-next-fieldset-btn">Next</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fieldset__item">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form__field">
+                                <input type="text" data-required="true" placeholder="Height*"
+                                class="form__text-input step-fs2-inp">
+                                <div class="field-error-tip">Enter your height</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="form__button btn js-prev-fieldset-btn">Prev</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="form__button btn js-next-fieldset-btn">Next</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fieldset__item">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form__field">
+                                <input type="text" data-required="true" placeholder="Weight*" class="form__text-input">
+                                <div class="field-error-tip">
+                                    Enter your weight
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="form__button btn js-prev-fieldset-btn">Prev</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2">
+                        Enter Passwords
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-4">
+                    <div class="form__field">
+                        <input type="password" data-required="true" placeholder="Current password"
+                        class="form__text-input">
+                        <div class="field-error-tip">
+                            Enter current password
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form__field">
+                        <input id="new-pass-input" type="password" data-type="pass" data-required="true"
+                        data-min-length="6" placeholder="New password" class="form__text-input">
+                        <div class="field-error-tip" data-error-text-2="At least 6 characters">
+                            Enter new password
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form__field">
+                        <input type="password" data-type="pass" data-required="true"
+                        data-pass-compare-input="#new-pass-input" placeholder="Re-enter new password"
+                        class="form__text-input">
+                        <div class="field-error-tip" data-error-text-2="Passwords must match">
+                            Re-enter new password
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <button type="submit" class="form__submit btn">Submit</button>
+                </div>
+            </div>
+            
+            <div class="form-error-tip">Ошибка заполнения полей формы</div>
+            
+        </form>
+        
+    </div>
+    
+    <div class="section wrap">
+        <div class="row">
+            <div class="col-12">
+                <div class="title">Ajax submit</div>
+            </div>
+        </div>
+        <form id="form-ajax" action="send-mail.php" method="POST" enctype="multipart/form-data" class="form">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form__field">
+                        <input type="text" name="myname[]" data-required="true" placeholder="Name*"
+                        class="form__text-input">
+                        <div class="field-error-tip">Enter your name</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="duplicate-model" class="hidden">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form__field">
+                            <input type="text" name="myname[]" data-required="true" placeholder="Name*"
+                            class="form__text-input">
+                            <div class="field-error-tip">Enter your name</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="button" class="js-remove-dupicated-form-btn">- Name</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="duplicated-block">
+                <!-- duplicated -->
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" data-form-model="#duplicate-model" data-duplicated-dest="#duplicated-block"
+                    class="js-dupicate-form-btn">+ Name</button>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="form__submit btn">Submit</button>
+                </div>
+            </div>
+            <div class="form-error-tip">Form error</div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form__loader"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div class="section wrap">
+        <div class="row">
+            <div class="col-12">
+                <div class="title">Normal submit (no ajax)</div>
+            </div>
+        </div>
+        <form id="form-no-ajax" action="send.php" method="POST" class="form">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form__field">
+                        <input type="text" data-required="true" placeholder="Name*" class="form__text-input">
+                        <div class="field-error-tip">Enter your name</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="form__submit btn">Submit</button>
+                </div>
+            </div>
+            <div class="form-error-tip">Ошибка заполнения полей формы</div>
+        </form>
+    </div>
+    
+    
+    <div class="section wrap">
+        <div class="row">
+            <div class="col-12">
+                <div class="title">Search field</div>
+            </div>
+        </div>
+        <form id="search-form" action="search.php" method="GET" class="form">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form__field form__field_btn">
+                        <input type="text" data-required="true" placeholder="Search..." class="form__text-input">
+                        <button type="submit" class="form__btn form__btn_search"></button>
+                        <div class="field-error-tip" data-error-text-2="Unacceptable symbols">Enter your request</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div class="section wrap">
+        <div class="row">
+            <div class="col-12">
+                <div class="title">Another form</div>
+            </div>
+        </div>
+        <form id="search-form-2" action="search.php" method="GET" class="an-form">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form__field form__field_btn">
+                        <input type="text" data-required="true" placeholder="Search..." class="form__text-input">
+                        <button type="submit" class="form__btn form__btn_search"></button>
+                        <div class="field-error-tip" data-error-text-2="Unacceptable symbols">Enter your request</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+
+</body>
+
+</html>

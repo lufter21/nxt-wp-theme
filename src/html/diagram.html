@@ -1,0 +1,54 @@
+@@include('_head.html', {"title": "Diagram"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "diagram", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+
+	<div class="section">
+
+		<div class="row">
+			<div class="col-12">
+				<h1>Diagram</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-2">
+				<!--Diagram/-->
+				@@include('../modules/diagram/diagram.html', {"id":"diagram"})
+				<!--/Diagram-->
+			</div>
+			<div class="col-3">
+				<!--Diagram/-->
+				@@include('../modules/diagram/diagram.html', {"id":"diagram-2"})
+				<!--/Diagram-->
+			</div>
+			<div class="col-2">
+				<!--Diagram/-->
+				@@include('../modules/diagram/diagram.html', {"id":"diagram-3"})
+				<!--/Diagram-->
+			</div>
+		</div>
+
+	</div>
+
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+</body>
+</html>

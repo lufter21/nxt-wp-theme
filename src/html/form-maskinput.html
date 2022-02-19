@@ -1,0 +1,80 @@
+@@include('_head.html', {"title": "Maskinput"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "maskinput", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+    <div class="section">
+        <form action="#" class="form">
+            <div class="row row_wrp">
+                <div class="col-4">
+                    <div class="form__field">
+                        <input type="text" placeholder="Phone +xxxxxxxx..." class="form__text-input maskinp-tel">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form__field">
+                        <input type="text" placeholder="Телефон +7(xxx)xxx-xx-xx" class="form__text-input maskinp-tel-ru">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form__field">
+                        <input type="text" placeholder="Gmail address" class="form__text-input maskinp-gmail">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row_wrp">
+                <div class="col-4">
+                    <div class="form__field">
+                        <input type="text" placeholder="Дата" class="form__text-input maskinp-date">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form__field">
+                        <input type="text" placeholder="Время" class="form__text-input maskinp-time">
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row row_wrp">
+                <div class="col-4">
+                    <div class="form__field">
+                        <input type="text" placeholder="Целое число" class="form__text-input maskinp-int">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form__field">
+                        <input type="text" placeholder="Десятичная дробь" class="form__text-input maskinp-float">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form__field">
+                        <input type="text" placeholder="Кириллица" class="form__text-input maskinp-cyr">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+
+</body>
+
+</html>

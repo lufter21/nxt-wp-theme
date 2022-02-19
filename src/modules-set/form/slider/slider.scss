@@ -1,0 +1,70 @@
+.formslider{
+    height: 26px;
+    margin-top: 13px;
+    position: relative;
+    &__bar{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 2px;
+        margin-top: -1px;
+        background: $gy;
+        border-radius: 2px;
+    }
+    &__track{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: auto;
+        height: 100%;
+        background: $rd;
+        border-radius: 2px;
+    }
+    &__drag{
+        @extend %btn;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 1px solid $gy;
+        background: #ffffff;
+        position: absolute;
+        left: 0;
+        top: -13px;
+        z-index: 2;
+        &:hover{
+            border-color: $gy;
+        }
+        &:active,
+        &[data-active="true"]{
+            transition: 0s;
+            background: $gy;
+            border-color: $gy;
+        }
+    }
+    &_vertical{
+        width: 14px;
+        height: 320px;
+        margin: 0;
+        .formslider{
+            &__bar{
+                left: 50%;
+                top: 0;
+                width: 2px;
+                height: 100%;
+                margin-left: -1px;
+            }
+            &__drag{
+                left: -12px;
+                top: auto;
+                bottom: 0;
+            }
+            &__track{
+                top: auto;
+                bottom: 0;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

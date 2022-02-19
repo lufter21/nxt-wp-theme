@@ -1,0 +1,61 @@
+/* screens */
+.screen{
+	@extend %fwh;
+	top: 100%;
+	transition: 1s;
+	z-index: 1;
+	.screen-horisontal &{
+		top: auto;
+		left: 100%;
+	}
+	&_first{
+		top: 0 !important;
+		.screen-horisontal &{
+			top: auto !important;
+			left: 0 !important;
+		}
+	}
+	&_top,
+	&_current{
+		top: 0;
+		.screen-horisontal &{
+			top: auto;
+			left: 0;
+		}
+	}
+	&_inner-scroll{
+		&__in{
+			@extend %fwh;
+			height: auto;
+			transition: .5s;
+		}
+	}
+	&-container{
+		@extend %fwh;
+		position: fixed;
+		overflow: hidden;
+	}
+	@media(max-width: 1200px){
+		position: relative;
+		top: 0;
+		height: 100vh;
+		&_inner-scroll{
+			height: auto !important;
+			&__in{
+				position: relative;
+				top: 0 !important;
+			}
+		}
+		&-container{
+			position: relative;
+			overflow: visible;
+			height: auto;
+		}
+		&-wrap{
+			height: auto !important;
+		}
+		&:first-child{
+			z-index: 4;
+		}
+	}
+}

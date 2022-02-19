@@ -1,0 +1,90 @@
+@@include('_head.html', {"title": "Form Autocomplete"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "form_autocomplete", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+    
+    <div class="section">
+        
+        <form action="test-ajax.php" method="POST" autocomplete="off" class="form">
+            
+            <div class="row row_wrp">
+                <div class="col-6">
+                    <div class="form__field">
+                        <div class="autocomplete">
+                            <button type="button" class="autocomplete__arr"></button>
+                            <input type="text" name="fruits" data-required="true" placeholder="Select a fruit*" data-other-value="Other fruit" class="autocomplete__input" value="">
+                            <div class="autocomplete__options-wrap">
+                                <ul class="autocomplete__options">
+                                    <!-- options -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="field-error-tip">Select fruit</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row row_wrp">
+                <div class="col-6">
+                    <div class="form__field">
+                        <div class="autocomplete">
+                            <button type="button" class="autocomplete__arr"></button>
+                            <input type="text" name="country" data-required="true" placeholder="Select a fruit*" data-nf-text="Nothing found" class="autocomplete__input" value="">
+                            <div class="autocomplete__options-wrap">
+                                <ul class="autocomplete__options">
+                                    <!-- options -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="field-error-tip">Select country</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row_wrp">
+                <div class="col-6">
+                    <div class="form__field">
+                        <div class="autocomplete">
+                            <button type="button" class="autocomplete__arr"></button>
+                            <input type="text" name="country2" data-required="true" placeholder="Select a fruit*" data-nf-text="Nothing found" data-empty-text="Select other field" class="autocomplete__input" value="">
+                            <div class="autocomplete__options-wrap">
+                                <ul class="autocomplete__options">
+                                    <!-- options -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="field-error-tip">Select country</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row row_wrp">
+                <div class="col-6">
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+    
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+</body>
+</html>

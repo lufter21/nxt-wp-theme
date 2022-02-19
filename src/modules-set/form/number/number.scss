@@ -1,0 +1,61 @@
+.number{
+    &__comp{
+        display: flex;
+        align-items: center;
+        width: 150px;
+        height: 59px;
+        border: 1px solid $gy;
+        border-radius: 59px;
+        padding: 0 12px;
+    }
+    &__input{
+        flex: 0 1 100%;
+        width: 100%;
+        background: none;
+        border: none;
+        text-align: center;
+        font-weight: 500;
+    }
+    &__btn{
+        @extend %btn;
+        flex: 0 0 30px;
+        height: 30px;
+        &_min{
+            &::before{
+                @extend %ab;
+                width: per(14,30);
+                height: 2px;
+                background: $gy;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: -1px 0 0 per(-7,30);
+            }
+        }
+        &_plus{
+            &::before{
+                @extend %ab;
+                width: per(14,30);
+                height: 2px;
+                background: $rd;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: -1px 0 0 per(-7,30);
+            }
+            &::after{
+                @extend %ab;
+                width: 2px;
+                height: per(14,30);
+                background: $rd;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: per(-7,30) 0 0 -1px;
+            }
+        }
+        &:hover{
+            opacity: .7;
+        }
+    }
+}

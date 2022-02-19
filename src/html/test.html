@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="log1" action="#" class="form"><input type="hidden" name="action" value="login"><div class="form__field"><label for="placeholder-index-0" class="placeholder" style="display: none;">E-mail</label>
+        <input type="text" name="login" value="l21@gmail.com" data-type="email" data-required="true" class="form__text-input" id="placeholder-index-0"><div class="field-error-tip">Enter e-mail</div></div><div class="mt-15"><div class="form__field"><label for="placeholder-index-1" class="placeholder" style="display: none;">Password</label>
+            <input type="password" name="pass" value="21" data-required="true" class="form__text-input" id="placeholder-index-1"><div class="field-error-tip">Enter password</div></div></div><div class="mt-15"><button type="submit" class="form__submit">Вход</button></div></form>
+    
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/common.js"></script>
+    
+    <script>
+        ajax({
+            url: 'http://127.0.0.1:8080/api/searchquery',
+            method: 'GET',
+            success: function (response) {
+                var response = JSON.parse(response);
+
+                console.log(response);
+
+            },
+            error: function (response) {
+                console.log(response);
+            }
+        });
+
+        Form.onSubmit(function (form, callback) {
+            switch (form.id) {
+                case 'log1':
+                
+                ajax({
+                    url: 'http://127.0.0.1:8080/api/auth',
+                    send: new FormData(form),
+                    success: function (response) {
+                        var response = JSON.parse(response);
+                        
+                        console.log(response);
+                        
+                    },
+                    error: function (response) {
+                        console.log(response);
+                    }
+                });
+
+                callback({ clearForm: false, unlockSubmitButton: true });
+            }
+        });
+        
+    </script>
+    
+</body>
+
+</html>

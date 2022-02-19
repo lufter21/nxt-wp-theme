@@ -1,0 +1,246 @@
+/* buttons */
+.btn{
+    @extend %btn;
+    width: 150px;
+    height: 43px;
+    color: #FFF;
+    background: $bk;
+    padding: 0 15px;
+    letter-spacing: 1px;
+}
+
+.arrow-btn{
+    @extend %btn;
+    height: 43px;
+    color: #FFF;
+    padding: 0 15px;
+    padding-right: 43px;
+    background: $bk;
+    letter-spacing: 1px;
+    &:after{
+        @extend %btn-icon;
+        width: 15px;
+        height: 16px;
+        right: 15px;
+        margin-top: -8px;
+    }
+}
+
+.plus-btn{
+    @extend %btn;
+    border-radius: 32px;
+    height: 43px;
+    color: #FFF;
+    background: $bk;
+    padding: 0 15px;
+    padding-left: 55px;
+    letter-spacing: 1px;
+    &:after{
+        @extend %btn-icon;
+        width: 32px;
+        height: 32px;
+        left: 6px;
+        margin-top: -16px;
+    }
+}
+
+.v-btn,
+.f-btn,
+.o-btn,
+.t-btn{
+    @extend %icon-btn;
+    width: r(44);
+    height: r(44);
+    border-radius: 50%;
+    background: #c4c4c4;
+    border: 3px solid $bk;
+    &::after{
+        @extend %btn-icon;
+        left: 50%;
+    }
+    &:hover{
+        opacity: .75;
+    }
+}
+
+.v-btn{
+    &::after{
+        width: per(36,44);
+        height: per(32,44);
+        margin: per(-14,44) 0 0 per(-19,44);
+    }
+}
+.f-btn{
+    &::after{
+        width: per(25,44);
+        height: per(25,44);
+        margin: per(-12,44) 0 0 per(-13,44);
+    }
+}
+.o-btn{
+    &::after{
+        width: per(22,44);
+        height: per(34,44);
+        margin: per(-17,44) 0 0 per(-11,44);
+    }
+}
+.t-btn{
+    &::after{
+        width: per(32,44);
+        height: per(26,44);
+        margin: per(-13,44) 0 0 per(-16,44);
+    }
+}
+
+.sc{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    &__item{
+        flex: 0 1 auto;
+        padding: 0 5px;
+    }
+}
+
+.img-icon-btn{
+    @extend %btn;
+    font-size: 18px;
+    height: em(60,18);
+    border-radius: em(8,18);
+    padding: em(2,18) em(32,18) 0 em(72,18);
+    text-align: left;
+    background: #ffbf00;
+    color: #715502;
+    &__img{
+        @extend %btn-icon;
+        font-size: inherit;
+        left: em(37,18);
+        width: em(20,18) !important;
+        height: em(30,18);
+        margin-top: em(-16,18);
+        @extend %c-img-wr;
+        img{
+            @extend %fw-img;
+            max-height: 100%;
+        }
+    }
+    &:hover{
+        opacity: .7;
+    }
+}
+
+.link{
+    @extend %link;
+    color: $be;
+    border-bottom: 1px solid $be;
+    &:hover{
+        border-bottom-color: transparent;
+    }
+}
+.green-link{
+    @extend %link;
+    color: $gn;
+    border-bottom: 1px solid $gn;
+    &_dash{
+        border-bottom-style: dashed;
+    }
+    &_rev{
+        border-bottom-color: transparent;
+        &:hover{
+            border-bottom-color: $gn;
+        }
+    }
+}
+
+.icon-link{
+    @extend %icon-link;
+    border-bottom: 1px solid $be;
+    margin-left: 48px;
+    &::before{
+        width: 35px;
+        height: 30px;
+        margin-top: -15px;
+        left: -48px;
+    }
+    &:hover{
+        border-bottom-color: transparent;
+    }
+}
+
+.paginate{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-left: em(-4);
+    margin-top: em(30);
+    li{
+        flex: 0 1 auto;
+        padding: 0 em(4);
+    }
+    &__a,
+    &__curr,
+    &__dots{
+        display: block;
+        font-size: em(20);
+        min-width: em(36,20);
+        height: em(36,20);
+        padding: 0 em(12,20);
+        line-height: em(34,20);
+        font-weight: 700;
+        color: $gy;
+        border: 1px solid $gy;
+        text-align: center;
+        text-decoration: none;
+    }
+    &__a{
+        transition: .21s;
+        &:hover{
+            color: #000;
+            border-color: #000;
+        }
+    }
+    &__curr{
+        color: #000;
+        border-color: #000;
+        cursor: not-allowed;
+    }
+    &__dots{
+        border: none;
+    }
+    &__prev,
+    &__next{
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: #000000;
+        margin: 0 7px;
+        position: relative;
+        transition: .21s;
+        &::after{
+            @extend %ab;
+            width: 10px;
+            height: 10px;
+            border: 2px solid transparent;
+            border-top-color: #FFF;
+            border-left-color: #FFF;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -7px;
+        }
+        &_disabled{
+            opacity: .2;
+        }
+        &:hover{
+            opacity: .7;
+        }
+    }
+    &__prev::after{
+        margin-left: -3px;
+        transform: rotate(-45deg);
+    }
+    &__next::after{
+        margin-left: -10px;
+        transform: rotate(135deg);
+    }
+}

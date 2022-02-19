@@ -1,0 +1,38 @@
+@@include('_head.html', {"title": "Home page"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "home", "user_item": "logged", "user_item": "not_logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+	<div class="row">
+		<div class="col-12">
+			<h1>WebGL</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12">		
+			<div class="webgl">
+				<canvas id="webgl-canvas" class="webgl__canvas"></canvas>
+			</div>
+		</div>
+	</div>
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+</body>
+</html>

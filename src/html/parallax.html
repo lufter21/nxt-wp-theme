@@ -1,0 +1,52 @@
+@@include('_head.html', {"title": "Parallax"})
+
+<style>
+.parallax-element{
+	width: 50px;
+	height: 50px;
+	margin: 100px;
+}
+</style>
+
+<!--HEADER/-->
+@@include('../modules/header/header.html')
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+
+	<div id="sec1" class="section" style="background: gray; width: 90%; margin: auto;">
+		
+		<!-- <div class="parallax-element el1" data-delta-x="150" style="background: red"></div> -->
+		<div class="parallax-element el2" data-range-x="20,0" style="background: blue"></div>
+		<!-- <div class="parallax-element el3" style="background: green"></div> -->
+
+
+	</div>
+
+	<div id="sec2" class="section" style="background: gray; width: 90%; margin: auto;">
+		
+		<!-- <div class="parallax-element el1" data-delta-x="150" style="background: red"></div> -->
+		<!-- <div class="parallax-element el2" data-range-x="20,0" style="background: blue"></div> -->
+		<div class="parallax-element el3" style="background: green"></div>
+
+
+	</div>
+
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+</body>
+</html>

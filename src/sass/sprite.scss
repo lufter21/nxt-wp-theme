@@ -1,0 +1,56 @@
+@import "sprite-extends";
+
+// gulp svg sprite bg size mixin
+$sprite-width: 153;
+@mixin bgs($icon-svg-w: 1) {
+    background-size: ($sprite-width / $icon-svg-w) * 100% auto;
+}
+
+/* sprites */
+.accord__button:after{
+    @extend %svg-arrow-alt-circle-down;
+    @include bgs(36);
+}
+
+.arrow-btn:after{
+    @extend %svg-arrow-right;
+    @include bgs(32);
+}
+
+.plus-btn:after{
+    @extend %svg-plus-circle;
+    @include bgs(36);
+}
+
+.form__btn_search:before{
+    @extend %svg-search;
+    @include bgs(36);
+}
+
+.custom-checkbox__input:checked + .custom-checkbox__label:before{
+    @extend %svg-check;
+    @include bgs(28);
+}
+
+.v-btn::after{
+    @extend %svg-vk;
+    @include bgs(36);
+}
+.f-btn::after{
+    @extend %svg-facebook;
+    @include bgs(32);
+}
+.o-btn::after{
+    @extend %svg-odnoklassniki;
+    @include bgs(24);
+}
+.t-btn::after{
+    @extend %svg-twitter;
+    @include bgs(36);
+}
+
+.video__btn-play,
+.icon:before{
+    @extend %svg-youtube;
+    @include bgs(36);
+}

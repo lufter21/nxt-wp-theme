@@ -1,0 +1,7 @@
+/node_modules/
+/PSD/
+*.pdf
+*.zip
+*.*-workspace
+*.*-project
+todo.txt

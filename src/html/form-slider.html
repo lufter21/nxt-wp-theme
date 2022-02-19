@@ -1,0 +1,106 @@
+@@include('_head.html', {"title": "Form Slider"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "form", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+    
+    <div class="section wrap">
+        
+        <form id="form" action="send.php" method="POST" enctype="multipart/form-data" class="form">
+            
+            <div class="row row_wrp">
+                <div class="col-4">
+                    <div class="formslider" data-range="true" data-min="200" data-max="10000" data-first-input="price1" data-second-input="price2"></div>
+                    
+                    <div class="row row_nw row_col-middle">
+                        <div class="col col_grow">
+                            <div class="form__field">
+                                <input id="price1" type="text" name="min_price" class="form__text-input" value="200">
+                            </div>
+                        </div>
+                        <div class="col c-lgray">
+                            —
+                        </div>
+                        <div class="col col_grow">
+                            <div class="form__field">
+                                <input id="price2" type="text" name="max_price" class="form__text-input" value="10000">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="row row_nw row_col-middle">
+                        <div class="col">
+                            <span id="min-price-label">0</span>
+                        </div>
+                        <div class="col col_right">
+                            <span id="max-price-label">150000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="formslider" data-range="true" data-min="0" data-max="150000" data-first-input="price2-1" data-second-input="price2-2"></div>
+
+                    <input id="price2-1" type="hidden" name="min_price" data-label-id="min-price-label" value="0">
+                    <input id="price2-2" type="hidden" name="max_price" data-label-id="max-price-label" value="150000">
+                </div>
+            </div>
+
+            <div class="row row_wrp">
+                <div class="col-1">
+                    <div class="formslider formslider_vertical" data-vertical="true" data-min="100" data-max="300" data-input="scale-inp">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form__field">
+                        <input id="scale-inp" type="text" class="form__text-input" value="100">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row_wrp">
+                <div class="col-6">
+                    <div class="formslider" data-min="0" data-max="1200" data-input="slider-inp-2">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form__field">
+                        <input id="slider-inp-2" type="text" class="form__text-input" value="0">
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row mt-25 row_wrp">
+                <div class="col-12">
+                    <button type="submit" class="form__submit btn">Submit</button>
+                </div>
+            </div>
+            
+            <div class="form-error-tip">Ошибка заполнения полей формы</div>
+            
+        </form>
+        
+    </div>
+    
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+
+</body>
+
+</html>

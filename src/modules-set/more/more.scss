@@ -1,0 +1,39 @@
+.more{
+    position: relative;
+    padding-bottom: e(50);
+    &__content{
+        height: 97px;
+        overflow: hidden;
+        position: relative;
+        &::after{
+            @extend %ab;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: em(54);
+            background: linear-gradient(180deg, transparent 0%, #ffffff 89%);
+            transition: .35s;
+            pointer-events: none;
+            .more_toggled &{
+                opacity: 0;
+            }
+        }
+    }
+    &__buttons{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    &__btn{
+        @extend %btn;
+        width: em(250);
+        height: em(45);
+        background: $bk;
+        color: #ffffff;
+        &.active{
+            opacity: .7;
+        }
+    }
+}

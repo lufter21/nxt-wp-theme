@@ -1,0 +1,180 @@
+@import "form-extends";
+
+.form{
+    & > .row{
+        margin-top: e(20);
+        @include fch(t);
+    }
+    &__text-input,
+    &__textarea{
+        @extend %inp;
+    }
+    &__textarea{
+        height: 100px;
+        resize: none;
+        overflow: auto;
+        line-height: 1.3;
+        padding-top: r(15);
+        padding-bottom: r(15);
+        &::-webkit-scrollbar {
+            width: r(8);
+        }
+        &::-webkit-scrollbar-track {
+            background: $gy;
+            border-radius: r(8);
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $be;
+            border-radius: r(8);
+        }
+    }
+    &__field{
+        position: relative;
+        &_hidden{
+            display: none;
+        }
+        &_btn{
+            .form__text-input{
+                padding-right: 50px;
+            }
+        }
+    }
+    &__label{
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    &__btn{
+        display: block;
+        height: 44px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 3;
+        border: 1px solid transparent;
+        background: none;
+        -webkit-appearance: none;
+        transition: .21s;
+        &:before{
+            @extend %ab;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+        &_search{
+            width: 42px;
+            &:before{
+                width: 16px;
+                height: 16px;
+                margin: -8px 0 0 -8px;
+            }
+        }
+        &:hover{
+            opacity: .5;
+        }
+    }
+    &__submit{
+        background: $rd;
+    }
+    &__loader{
+        height: 3px;
+        position: relative;
+        margin: 30px 0;
+        overflow: hidden;
+        display: none;
+    }
+    &_sending{
+        .form{
+            &__loader{
+                display: block;
+                &:before{
+                    @extend %ab;
+                    width: 200%;
+                    height: 100%;
+                    background-image: linear-gradient(to right, transparent 0%, $gn 50%, transparent 100%);
+                    animation: form_loading 3s infinite linear;
+                }
+            }
+            &__submit{
+                position: relative;
+                &:before{
+                    @extend %ab;
+                    @extend %fwh;
+                    background: $bk;
+                    z-index: 2;
+                }
+                &:after{
+                    @extend %ab;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    z-index: 3;
+                    margin: -15px 0 0 -15px;
+                    width: 30px;
+                    height: 30px;
+                    background: url("../images/loading.svg") no-repeat 50% 50%;
+                    background-size: 100% 100%;
+                    animation: form_loading_icon .9s infinite linear;
+                }
+            }
+        }
+    }
+}
+
+@keyframes form_loading_icon {
+    0% {
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(360deg); 
+    }
+}
+
+@keyframes form_loading {
+    0% {
+        transform: translate(-100%);
+    }
+    50% {
+        transform: translate(50%);
+    }
+    100% {
+        transform: translate(-100%);
+    }
+}
+
+/*variable height textarea*/
+.var-height-textarea{
+    position: relative;
+    &__mirror{
+        min-height: 44px;
+        white-space: pre-wrap;
+        line-height: 1.3;
+        padding: 12px 15px;
+        border: 1px solid transparent;
+        visibility: hidden;
+    }
+    &__textarea{
+        @extend %fwh;
+        height: 100%;
+        overflow: hidden;
+    }
+    &_middle{
+        height: 120px !important;
+        border: 1px solid $gy;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        & > div{
+            width: 100%;
+            position: relative;
+            max-height: 120px;
+        }
+        .var-height-textarea__textarea{
+            border: none;
+            box-shadow: none;
+            overflow: auto;
+        }
+    }
+}

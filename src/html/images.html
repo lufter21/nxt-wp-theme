@@ -1,0 +1,87 @@
+@@include('_head.html', {"title": "Images"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "images", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+
+	<div class="section">
+
+		<div class="row">
+			<div class="col-12">
+				<div class="title">Images</div>
+				<div class="title-h2">
+					Cover image (with JavaScript)
+				</div>
+			</div>
+		</div>
+
+		<div class="row" style="margin-bottom: 55px">
+			<div class="col-4">
+				<div style="height: 300px;" class="cover-img-wrap">
+					<img src="images/img1.jpg" alt="img" id="img1">
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div style="height: 300px;" class="cover-img-wrap">
+					<img src="images/img2.jpg" class="cover-img" alt="img">
+				</div>
+			</div>
+
+			<div class="col-2">
+				<div style="height: 300px;" class="cover-img-wrap">
+					<img src="images/img1.jpg" alt="img" class="cover-img">
+				</div>
+			</div>
+
+			<div class="col-2">
+				<div style="height: 300px;" class="cover-img-wrap">
+					<img src="images/img2.jpg" class="cover-img" alt="img">
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<div class="title-h2">
+					Flexible image (with JavaScript)
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-6">
+				<div style="height: 300px;" class="cover-img-wrap">
+					<img src="images/1.png" data-images="9999->images/img2.jpg,1000->images/img1.jpg" class="flex-img" alt="img">
+				</div>
+			</div>
+			<div class="col-6">
+				<div style="height: 300px;" class="cover-img-wrap">
+					<img src="images/1.png" data-images="9999->images/img1.jpg,1000->images/img2.jpg" class="flex-img" alt="img">
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+</body>
+</html>

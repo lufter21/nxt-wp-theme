@@ -1,0 +1,236 @@
+@@include('_head.html', {"title": "Content"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "content", "user_item": "logged"})
+<!--/HEADER-->
+  
+<!--MAIN/-->
+<main class="main">
+
+	<div class="section">
+		<div class="row row_wrp">
+			<div class="col-3">
+				<p style="background: yellow"> 
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.  Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+			<div class="col-4">
+				<div class="more">
+					<p style="background: blue">
+						Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.  Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</div>
+			</div>
+			<div class="col-5">
+				<p style="background: green">
+					Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="row row_wrp">
+			<div class="col-4">
+				@@include('../modules/diagram/diagram.html')
+			</div>
+			<div class="col-4">
+				<div id="timer"></div>
+			</div>
+			<div class="col-4">
+				<button class="js-toggle button button_red" data-second-button-text="Актиная кнопка">Кнопка</button> <br> <br>
+				<button class="js-toggle button button_red">Кнопка</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="section">
+		<ul class="social">
+			<li>
+				<a href="#" class="social__a social__a_ing"></a>
+			</li>
+			<li>
+				<a href="#" class="social__a social__a_fb"></a>
+			</li>
+			<li>
+				<a href="#" class="social__a social__a_vk"></a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="section">
+		<div class="video">
+			<div class="video__thumb cover-img-wrap">
+				<img src="../../images/video/v1.jpg" alt="video">
+				<a href="#media-popup" class="js-open-popup video__play btn-play"></a>
+			</div>
+			<div class="video__chanal">
+				<div class="middle-img-wrap">
+					<img src="../../images/video/l1.png" alt="video" class="middle-img">
+				</div>
+			</div>
+			<div class="video__tit">
+				Ижевские VR-очки <br>
+				| Сделано в России
+			</div>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="row row_wrp">
+			<div class="col-2">
+				<div class="numspin">55555</div>
+			</div>
+			<div class="col-2">
+				<div class="numspin">77 777.58</div>
+			</div>
+			<div class="col-2">
+				<div class="numspin">88 888,954</div>
+			</div>
+			<div class="col-3">
+				<div id="ns2-1" class="numspin2">1222555</div>
+			</div>
+			<div class="col-3">
+				<div id="ns2-2" class="numspin2">1333777</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="row wrap" style="margin-top: 100px; margin-bottom: 100px">
+			<div class="col">
+				<div class="numspin-s">4 444 444</div>
+			</div>
+		</div>
+		<div class="row wrap">
+			<div class="col">
+				<div class="numspin-s">5 555 555</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="row row_wrp" style="margin-top: 100px; margin-bottom: 100px">
+			<div class="col-12">
+				<ul class="paginate">
+					<li class="paginate__item">
+						<a href="#" class="paginate__prev paginate__prev_disabled">&lt;</a>
+					</li>
+					<li class="paginate__item">
+						<span class="paginate__curr">1</span>
+					</li>
+					<li class="paginate__item">
+						<a href="#" class="paginate__a">2</a>
+					</li>
+					<li class="paginate__item">
+						<a href="#" class="paginate__a">3</a>
+					</li>
+					<li class="paginate__item">
+						<a href="#" class="paginate__a">4</a>
+					</li>
+					<li class="paginate__item">
+						<a href="#" class="paginate__next">&gt;</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+<script>
+
+	$(document).ready(function() {
+		var main_diagram = [117, 111, 82, 22];
+
+		$(window).scroll(function() {
+			if ( $('#diagram').offset().top < (($(window).height()/2)+$(window).scrollTop()) ) {
+				diagram('diagram', main_diagram, { animate: true, numId: 'diagr-num-'});
+			}
+		});
+
+	});
+
+</script>
+
+<script>
+	Timer.init(350, function() {
+		window.location.href = '#';
+	});
+</script>
+
+
+
+<script>
+	$(document).ready(function() {
+
+		
+		$('.numspin').each(function() {
+			numberspin(this).start();
+		});
+
+
+		$('.numspin2').each(function() {
+			var ns2 = numberspin(this);
+			$(this).click(function() {
+				ns2.start();
+			});
+		});
+
+		$('.numspin-s').each(function() {
+			var _$ = $(this);
+			numberspin(this);
+		});
+
+
+		$(window).scroll(function() {
+			var winScrTop = $(window).scrollTop();
+
+			$('.numspin-s').each(function() {
+				var _$ = $(this),
+				ofsT = _$.offset().top + 100;
+
+				if ((winScrTop + winH) > ofsT) {
+					numberspin(this).start();
+				}
+
+			});
+
+		});
+		
+
+		/*var ns2 = numberspin('.numspin2', {
+			animation: 2
+		});*/
+		
+		
+	});
+</script>
+
+</body>
+</html>

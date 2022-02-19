@@ -1,0 +1,9 @@
+.webgl{
+   position: relative;
+   @include fixprop;
+   max-width: 500px;
+   margin: 0 auto;
+   &__canvas{
+      @extend %fwh;
+   }
+}

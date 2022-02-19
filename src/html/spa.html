@@ -1,0 +1,139 @@
+@@include('_head.html', {"title": "Home page"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "home", "user_item": "logged", "user_item":
+"not_logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+    <div class="row">
+        <div id="head" class="col-12">
+            <!-- content -->
+        </div>
+        <div id="content" class="col-12">
+            <!-- content -->
+        </div>
+    </div>
+    
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+<script type="text/template" id="head-tpl">
+    <p>Page: <%page%></p>
+</script>
+
+<script type="text/template" id="home-page-content-tpl">
+    <h1><%title%></h1>
+    <p>
+        <%text%>
+    </p>
+    
+    <%if desc%>
+    <p>
+        <%desc%>
+    </p>
+    <%endif%>
+    
+    <ul>
+        <%for list as item%>
+        <li id="<%item%>"><%item.name%></li>
+        <%endfor%>
+    </ul>
+    
+    <p>
+        <a href="#about-page" class="spa-link">About</a>
+    </p>
+</script>
+
+<script type="text/template" id="form-page-content-tpl">
+    <h1><%title%></h1>
+    
+    <form id="form-ajax" action="send-mail.php" method="POST" enctype="multipart/form-data" class="form">
+        <div class="row">
+            <div class="col-12">
+                <div class="form__field">
+                    <input type="text" name="myname[]" data-required="true" placeholder="Name*"
+                    class="form__text-input">
+                    <div class="field-error-tip">Enter your name</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="form__field">
+                    <select class="custom-select" name="favorite-animal" data-placeholder="Select an animal*" data-required="true">
+                        <option value="monkey">Monkey</option>
+                        <option value="cat">Cat</option>
+                        <option>Dog</option>
+                        <option value="lion" data-second-value="lionID">Lion</option>
+                        <option value="crocodile">Crocodile</option>
+                        <option value="elephant">Elephant</option>
+                        <option value="other" data-hide-elements="#hide-animal-field">Hide</option>
+                        <option value="other" data-show-elements="#other-animal-field">Other</option>
+                    </select>
+                    <div class="field-error-tip">Select an animal</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="duplicate-model" class="hidden">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form__field">
+                        <input type="text" name="myname[]" data-required="true" placeholder="Name*"
+                        class="form__text-input">
+                        <div class="field-error-tip">Enter your name</div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="button" class="js-remove-dupicated-form-btn">- Name</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="duplicated-block">
+            <!-- duplicated -->
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <button type="button" data-form-model="#duplicate-model" data-duplicated-dest="#duplicated-block"
+                class="js-dupicate-form-btn">+ Name</button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="form__submit btn">Submit</button>
+            </div>
+        </div>
+        <div class="form-error-tip">Form error</div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form__loader"></div>
+            </div>
+        </div>
+    </form>
+    
+    <p>
+        <a href="#about-page" class="spa-link">About</a>
+    </p>
+</script>
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+</body>
+
+</html>

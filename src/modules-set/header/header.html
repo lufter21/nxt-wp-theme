@@ -1,0 +1,29 @@
+<header id="header" class="header">
+    <div class="header__row row row_col-middle sm-row-col-fw">
+        <div class="col p-y-0">
+            <a href="index.html" class="header__logo"><img src="images/logo.svg" alt="logo"></a>
+        </div>
+        <div class="col col_grow p-y-0">
+            <div class="row row_col-middle sm-row-col-fw">
+                <nav class="col">
+                    <!--Menu/-->
+                    @@include('menu/menu.html', {"menu_item_current": "@@menu_item_current"})
+                    <!--/Menu-->
+                </nav>
+                <div class="col">
+                    <!--Lang/-->
+                    @@include('lang/lang.html', {"lang_en": "@@lang_en", "lang_ru": "@@lang_ru", "lang_current": "@@lang_current"})
+                    <!--/Lang-->
+                </div>
+                <div class="col col_right p-0">
+                    <!--User/-->
+                    @@include('user/user.html', {"user_item": "@@user_item"})
+                    <!--/User-->
+                </div>
+            </div>
+        </div>
+        
+        <button class="js-close-menu menu-close-btn"></button>
+    </div>
+    <button class="js-open-menu open-menu-btn"><span></span><span></span><span></span><span></span></button>
+</header>

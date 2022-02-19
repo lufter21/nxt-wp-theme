@@ -1,0 +1,119 @@
+@import "../form-extends";
+
+.autocomplete{
+    position: relative;
+    z-index: 1;
+    &__input{
+        @extend %inp;
+        padding-right: r(80) !important;
+        position: relative;
+        z-index: 2;
+    }
+    &__arr{
+        display: block;
+        width: r(80);
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 7;
+        border: none;
+        background: none;
+        &:after{
+            @extend %ab;
+            width: r(20);
+            height: r(20);
+            border-left: 1px solid $bk;
+            border-bottom: 1px solid $bk;
+            position: absolute;
+            right: r(30);
+            top: 50%;
+            margin-top: r(-14);
+            transform: rotate(-45deg);
+        }
+    }
+    &__options{
+        list-style: none;
+        height: 0;
+        max-height: 250px;
+        overflow: hidden;
+        visibility: hidden;
+        transition: .21s;
+        li{
+            margin-top: r(20);
+            @include fch(t);
+            &.hidden{
+                display: none;
+            }
+            &:first-child{
+                border: none;
+            }
+            &.hover{
+                .autocomplete__val{
+                    color: $rd;
+                }
+            }
+        }
+        &.ovfauto{
+            overflow: auto;
+        }
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: #22262D;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #353E4C;
+        }
+        &-empty{
+            padding: 10px 15px;
+            text-align: center;
+        }
+        &-wrap{
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            padding: r(64) r(30) r(20) r(36);
+            border: 1px solid $rd;
+            border-top: none;
+            border-radius: 0 0 r(30) r(30);
+            background: #fff;
+            box-shadow: 4px 6px 13px rgba(0, 0, 0, .25);
+            overflow: hidden;
+            visibility: hidden;
+        }
+    }
+    &__val{
+        display: block;
+        width: 100%;
+        font-size: r(27);
+        color: $gy;
+        text-decoration: none;
+        text-align: left;
+        border: none;
+        background: none;
+        transition: .21s;
+        span{
+            color: $rd;
+        }
+        &:hover{
+            color: $rd;
+        }
+    }
+    &_opened{
+        z-index: 3;
+        .autocomplete__input{
+            border-color: $rd;
+            color: $rd;
+        }
+        .autocomplete__options,
+        .autocomplete__options-wrap{
+            visibility: visible;
+        }
+    }
+    .placeholder{
+        z-index: 3;
+    }
+}

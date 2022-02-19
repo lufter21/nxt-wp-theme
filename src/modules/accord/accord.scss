@@ -1,0 +1,95 @@
+.accord{
+    &__item{
+        margin-top: 20px;
+        @include fch(t);
+        background: $gy;
+        border-radius: 20px;
+    }
+    &__button{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 5px 80px 5px 40px;
+        position: relative;
+        width: 100%;
+        height: 68px;
+        text-align: left;
+        line-height: normal;
+        border: none;
+        background: none;
+        user-select: none;
+        &:after{
+            @extend %ab;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            margin-top: -15px;
+            opacity: .38;
+            transition: .21s;
+        }
+        &.active{
+            &:after{
+                transform: rotate(180deg);
+            }
+            .accord__btn-btn{
+                &:after,
+                &:before{
+                    @extend %ab;
+                    width: 20px;
+                    height: 2px;
+                    background: $gy;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    margin: -1px 0 0 -10px;
+                    border: none;
+                }
+                &:after{
+                    transform: rotate(-45deg);
+                }
+                &:before{
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+    &__btn{
+        &-txt{
+            display: block;
+            width: 100%;
+        }
+        &-btn{
+            display: block;
+            width: 53px;
+            height: 100%;
+            background: $bk;
+            position: absolute;
+            right: 0;
+            top: 0;
+            border: 1px solid $gy;
+            &:after{
+                @extend %ab;
+                width: 10px;
+                height: 10px;
+                border: 2px solid transparent;
+                border-top-color: $gy;
+                border-left-color: $gy;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin: -11px 0 0 -7px;
+                transform: rotate(-135deg);
+            }
+        }
+    }
+    &__content{
+        height: 0;
+        overflow: hidden;
+        transition: .21s;
+        &-inner{
+            padding: r(20);
+        }
+    }
+}

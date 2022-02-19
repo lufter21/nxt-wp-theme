@@ -1,0 +1,73 @@
+@@include('_head.html', {"title": "Toggle"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "toggle", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+    
+    <div class="section">
+        
+        <div class="row row_wrp">
+            <div class="col-12">
+                <h1>Toggle</h1>
+            </div>
+        </div>
+        
+        <div class="row row_wrp">
+            <div class="col-3">
+                <button id="fst-tgl-btn" type="button" class="js-toggle toggle"></button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="js-toggle toggle" data-toggle-off="document"></button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="js-toggle toggle" data-dependence-target-elements="#fst-tgl-btn"></button>
+            </div>
+            <div class="col-3">
+                <h2>toggle This h2</h2>
+                <button type="button" class="js-toggle toggle" data-target-elements=".col-3->h2"></button>
+            </div>
+        </div>
+
+        <div class="row row_wrp">
+            <div class="col-2">
+                <button type="button" class="js-toggle toggle toggled" data-switch="sw1"></button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="js-toggle toggle" data-switch="sw1"></button>
+            </div>
+        </div>
+
+        <div class="row row_wrp">
+            <div class="col-2">
+                <button type="button" class="js-toggle toggle toggled" data-switch="sw2"></button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="js-toggle toggle" data-switch="sw2"></button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="js-toggle toggle" data-switch="sw2"></button>
+            </div>
+        </div>
+        
+    </div>
+    
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+</body>
+</html>

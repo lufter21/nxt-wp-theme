@@ -1,0 +1,47 @@
+@@include('_head.html', {"title": "Get content via Ajax"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "getcontentajax", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+
+	<div class="section">
+
+		<div class="row">
+			<div class="col-12">
+				<h1>Get content via Ajax</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-4">
+				<button class="js-get-content-ajax btn">Get Content</button>
+			</div>
+			<div class="col-8">
+				<div id="output-ajax">
+					<!--ajax content-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+</body>
+</html>

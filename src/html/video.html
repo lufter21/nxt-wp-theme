@@ -1,0 +1,56 @@
+@@include('_head.html', {"title": "Video"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "video", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+
+	<div class="section">
+
+		<div class="row">
+			<div class="col-12">
+				<h1>Video</h1>
+				<h2>Embedded video from youtube</h2>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-6">
+				<!--VIDEO/-->
+				@@include('../modules/video/video.html', {
+					"img_src":"images/img1.jpg",
+					"video_src":"https://www.youtube.com/embed/l6U2qXfdk6I"
+				})
+				<!--/VIDEO-->
+			</div>
+			<div class="col-6">
+				<!--VIDEO/-->
+				@@include('../modules/video/video.html', {
+					"img_src":"images/img2.jpg",
+					"video_src":"https://www.youtube.com/embed/mbguWYnqJtY"
+				})
+				<!--/VIDEO-->
+			</div>
+		</div>
+
+	</div>
+
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+@@include('_head.html', {"title": "Frames Animate"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "frames", "user_item": "logged", "user_item": "not_logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+	<div class="row row_wrp">
+		<div class="col-12">
+			<h1>Frames Animate</h1>
+		</div>
+	</div>
+
+	<div class="row row_wrp">
+		<div class="col-12">
+			<canvas id="stopmotion-frames" class="frames-animate" data-frames-count="4" data-path="images/frames/car-straight.png" style="width: 300px; height: 230px;"></canvas>
+		</div>
+	</div>
+
+	<div class="row row_wrp">
+		<div class="col-12">
+			<canvas id="mmg-stopmotion-frames" class="frames-animate" data-frames-count="65" data-frames-scheme="9:8" data-path="images/frames/mmg.jpg" data-path-webp="images/frames/mmg.webp"></canvas>
+		</div>
+	</div>
+
+	<div class="row row_wrp">
+		<div class="col-12">
+			<canvas id="moms-stopmotion-frames" class="frames-animate" data-frames-count="30" data-path="images/frames/moms" data-frames-ext="jpg"></canvas>
+		</div>
+	</div>
+	
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+</body>
+</html>

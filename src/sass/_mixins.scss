@@ -1,0 +1,31 @@
+@mixin clr() {
+    &:after{
+        display: block;
+        content: "";
+        width: 100%;
+        clear: both;
+    }
+}
+
+// fixProportion
+@mixin fixprop($width: 1, $height: 1) {
+    &:before{
+        display: block;
+        content: "";
+        width: 100%;
+        padding-bottom: $height * (100 / $width) * 1%;
+    }
+}
+
+// first child
+@mixin fch($m: default) {
+    &:first-child{
+        @if $m == t {
+            margin-top: 0;
+            padding-top: 0;
+        } @else if $m == l {
+            margin-left: 0;
+            padding-left: 0;
+        }
+    }
+}

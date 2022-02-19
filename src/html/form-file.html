@@ -1,0 +1,214 @@
+@@include('_head.html', {"title": "Form File"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "form_file", "user_item": "logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+    
+    <div class="section">
+        <form id="custom-form" action="send.php" method="POST" enctype="multipart/form-data" class="form">
+            
+            <div class="row row_wrp">
+                <div class="col-12 pad-0">
+                    <div class="form__field">
+                        <div class="custom-file">
+                            <div class="custom-file__items custom-file__items_flex">
+                                <!--items-->
+                            </div>
+                            <div class="custom-file__lab-wrap ta-c">
+                                <label for="upload-file-input" class="custom-file__lab">Upload images (less 1Mb)</label>
+                                <input id="upload-file-input" type="file" name="uploads-1" data-ext="jpg,jpeg,png,gif" data-max-size="1000000" data-required="true" class="custom-file__input" multiple data-max-files="3">
+                            </div>
+                        </div>
+                        <div class="field-error-tip ta-c mt-25" data-error-text-2="Upload images (jpg, png, gif)" data-error-text-3="Upload files less 1Mb" data-error-text-4="Maximum number of files is 3">Upload images</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row row_wrp mt-25">
+                <div class="col-12">
+                    <button type="submit" class="form__submit button">Submit</button>
+                </div>
+            </div>
+            
+            <div class="form-error-tip">Ошибка заполнения полей формы</div>
+            
+        </form>
+    </div>
+    
+    <div class="section">
+        <form id="custom-form-1" action="send.php" method="POST" enctype="multipart/form-data" class="form">
+            
+            <div class="row row_wrp">
+                <div class="col-12 pad-0">
+                    <div class="form__field">
+                        <div class="custom-file">
+                            <div class="custom-file__items">
+                                <!-- preview items -->
+                            </div>
+                            <div class="custom-file__lab-wrap">
+                                <label for="upload-file-input-1" class="custom-file__lab btn"><span class="btn__in">Выбрать файл</span></label>
+
+                                <input name="uploads" id="upload-file-input-1" type="file" data-ext="jpg,jpeg,png,gif" data-max-size="10000000" data-action="clear" data-required="true" class="custom-file__input">
+                            </div>
+                            
+                        </div>
+                        <div class="field-error-tip ta-c mt-25" data-error-text-2="Загрузите изображение jpg, png или gif" data-error-text-3="Максимальный размер 10 Mb" data-error-text-4="Maximum number of files is 5">Загрузите изображение чека</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row row_wrp mt-25">
+                <div class="col-12">
+                    <button type="submit" class="form__submit button">Submit</button>
+                </div>
+            </div>
+            
+            <div class="form-error-tip">Ошибка заполнения полей формы</div>
+            
+        </form>
+    </div>
+    
+    <div class="section">
+        <form id="custom-form-2" action="test-ajax.php" method="POST" enctype="multipart/form-data" class="form">
+            
+            <div class="row row_wrp">
+                <div class="col-12 pad-0">
+                    <div class="form__field">
+                        <div class="custom-file">
+                            <div class="custom-file__items custom-file__items_flex">
+                                <!-- preview items -->
+                            </div>
+                            <div class="custom-file__lab-wrap">
+                                <div class="ta-c">
+                                <label for="upload-file-input-2" class="custom-file__lab">Upload images (less 1Mb)</label>
+                            </div>
+                            <input id="upload-file-input-2" type="file" name="uploads-2" data-ext="jpg,jpeg,png,gif" data-max-size="1000000" data-action="clear" data-required="true" class="custom-file__input" multiple data-max-files="5">
+                            </div>
+                        </div>
+                        <div class="field-error-tip ta-c mt-25" data-error-text-2="Upload images (jpg, png, gif)" data-error-text-3="Upload files less 1Mb" data-error-text-4="Maximum number of files is 5">Upload images</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row row_wrp">
+                <div class="col-12 pad-0">
+                    <div class="form__field">
+                        <div class="custom-file">
+                            <div class="custom-file__items custom-file__items_flex">
+                                <!-- preview items -->
+                            </div>
+                            <div class="custom-file__lab-wrap">
+                                <div class="ta-c">
+                                <label for="upload-file-input-3" class="custom-file__lab">Upload documents (less 1Mb)</label>
+                            </div>
+                            <input id="upload-file-input-3" type="file" name="uploads-3" data-ext="doc,docx,pdf" data-max-size="1000000" data-required="true" class="custom-file__input" multiple data-max-files="3">
+                            </div>
+                            
+                        </div>
+                        <div class="field-error-tip ta-c mt-25" data-error-text-2="Upload documents (doc, docx, pdf)" data-error-text-3="Upload files less 1Mb" data-error-text-4="Maximum number of files is 3">Upload documents</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row row_wrp mt-25">
+                <div class="col-12">
+                    <button type="submit" class="form__submit button">Submit</button>
+                </div>
+            </div>
+            
+            <div class="form-error-tip">Ошибка заполнения полей формы</div>
+            
+        </form>
+    </div>
+    
+    <div class="section">
+        <form id="custom-form-3" action="test-ajax.php" method="POST" enctype="multipart/form-data" class="form">
+            
+            <div class="row row_wrp">
+                <div class="col-6 p-x-0">
+                    <div class="form__field">
+                        <div class="custom-file">
+                            <div class="custom-file__items">
+                                <!-- preview items -->
+                            </div>
+                            <div class="custom-file__lab-wrap">
+                                <div class="custom-file__btn-wrap">
+                                <label for="upload-file-input-4" class="custom-file__btn"><span class="custom-file__label-text" data-label-text-2="Change images (less 1Mb)">Upload images (less 1Mb)</span></label>
+                            </div>
+                            <input id="upload-file-input-4" type="file" name="uploads-4" data-ext="jpg,jpeg,png,gif" data-max-size="1000000" data-required="true" class="custom-file__input" multiple data-max-files="5">
+                            </div>
+                        </div>
+                        <div class="field-error-tip ta-c mt-25" data-error-text-2="Upload images (jpg, png, gif)" data-error-text-3="Upload files less 1Mb" data-error-text-4="Maximum number of files is 5">Upload images</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row row_wrp mt-25">
+                <div class="col-12">
+                    <button type="submit" class="form__submit btn">Submit</button>
+                </div>
+            </div>
+            
+            <div class="form-error-tip">Ошибка заполнения полей формы</div>
+            
+        </form>
+    </div>
+    
+    <div class="section">
+        <form id="custom-form-4" action="test-ajax.php" method="POST" enctype="multipart/form-data" class="form">
+            
+            <div class="row row_wrp">
+                <div id="ava-preview" class="col-12">
+                    
+                </div>
+                <div class="col-12 pad-0">
+                    <div class="form__field">
+                        <div class="custom-file">
+                            <div class="custom-file__items custom-file__items_flex">
+                                <!-- preview items -->
+                            </div>
+                            <div class="custom-file__lab-wrap">
+                                <div class="ta-c">
+                                <label for="upload-file-input-5" class="custom-file__lab custom-file__label-text" data-label-text-2="Change file (less 1Mb)">Upload image (less 1Mb)</label>
+                                <button type="button" class="custom-file__clear-btn">Сбросить</button>
+                            </div>
+                            <input id="upload-file-input-5" type="file" name="uploads-2" data-ext="jpg,jpeg,png,gif" data-max-size="1000000" data-required="true" data-preview-elem="#ava-preview" class="custom-file__input">
+                            </div>
+                        </div>
+                        <div class="field-error-tip ta-c mt-25" data-error-text-2="Upload image (jpg, png, gif)" data-error-text-3="Upload file less 1Mb">Upload image</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row row_wrp mt-25">
+                <div class="col-12">
+                    <button type="submit" class="form__submit button">Submit</button>
+                </div>
+            </div>
+            
+            <div class="form-error-tip">Ошибка заполнения полей формы</div>
+            
+        </form>
+    </div>
+    
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+%svg-common {
+	background: url("../images/sprite.svg") no-repeat;
+}
+
+%svg-angle-down {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+%svg-angle-down-dims {
+	width: 164px;
+	height: 260px;
+}
+
+%svg-arrow-alt-circle-down {
+	@extend %svg-common;
+	background-position: 25.153374233128833% 0;
+}
+
+%svg-arrow-alt-circle-down-dims {
+	width: 260px;
+	height: 260px;
+}
+
+%svg-arrow-right {
+	@extend %svg-common;
+	background-position: 61.98830409356725% 0;
+}
+
+%svg-arrow-right-dims {
+	width: 228px;
+	height: 260px;
+}
+
+%svg-check {
+	@extend %svg-common;
+	background-position: 58.8235294117647% 71.8232044198895%;
+}
+
+%svg-check-dims {
+	width: 28px;
+	height: 28px;
+}
+
+%svg-facebook {
+	@extend %svg-common;
+	background-position: 0 52.84552845528455%;
+}
+
+%svg-facebook-dims {
+	width: 228px;
+	height: 260px;
+}
+
+%svg-facebook-wh {
+	@extend %svg-common;
+	background-position: 61.78128523111612% 71.52682255845943%;
+}
+
+%svg-facebook-wh-dims {
+	width: 25px;
+	height: 25px;
+}
+
+%svg-instagram {
+	@extend %svg-common;
+	background-position: 64.59977452085683% 71.52682255845943%;
+}
+
+%svg-instagram-dims {
+	width: 25px;
+	height: 25px;
+}
+
+%svg-odnoklassniki {
+	@extend %svg-common;
+	background-position: 30.481283422459892% 52.84552845528455%;
+}
+
+%svg-odnoklassniki-dims {
+	width: 164px;
+	height: 260px;
+}
+
+%svg-plus-circle {
+	@extend %svg-common;
+	background-position: 60.122699386503065% 52.84552845528455%;
+}
+
+%svg-plus-circle-dims {
+	width: 260px;
+	height: 260px;
+}
+
+%svg-search {
+	@extend %svg-common;
+	background-position: 100% 0;
+}
+
+%svg-search-dims {
+	width: 260px;
+	height: 260px;
+}
+
+%svg-twitter {
+	@extend %svg-common;
+	background-position: 100% 52.84552845528455%;
+}
+
+%svg-twitter-dims {
+	width: 260px;
+	height: 260px;
+}
+
+%svg-twitter-wh {
+	@extend %svg-common;
+	background-position: 67.41826381059752% 71.52682255845943%;
+}
+
+%svg-twitter-wh-dims {
+	width: 25px;
+	height: 25px;
+}
+
+%svg-vk {
+	@extend %svg-common;
+	background-position: 0 99.91545615248634%;
+}
+
+%svg-vk-dims {
+	width: 260px;
+	height: 231.56px;
+}
+
+%svg-youtube {
+	@extend %svg-common;
+	background-position: 39.877300613496935% 99.91545615248634%;
+}
+
+%svg-youtube-dims {
+	width: 260px;
+	height: 231.56px;
+}
+

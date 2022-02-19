@@ -1,0 +1,45 @@
+/* icons */
+.icon{
+    @extend %icon;
+    min-height: 21px;
+    padding-left: 30px;
+    &:before{
+        width: 25px;
+        height: 21px;
+        top: 0;
+    }
+}
+.tel-icon{
+    @extend %icon;
+    width: e(28);
+    height: e(28);
+    background: rgba(49, 51, 51, 0.2);
+    svg{
+        width: e(20);
+        height: e(20);
+    }
+    &::before{
+        display: none;
+    }
+}
+.img-icon{
+    position: relative;
+    padding: em(10) 0 em(10) em(45);
+    &__ico{
+        display: block;
+        position: absolute;
+        left: 0;
+        top: em(1);
+        width: em(32);
+        height: em(32);
+        span{
+            display: block;
+            @extend %fwh;
+            @extend %c-img-wr;
+        }
+        img{
+            @extend %fw-img;
+            max-height: 100%;
+        }
+    }
+}

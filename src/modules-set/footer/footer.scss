@@ -1,0 +1,40 @@
+.footer{
+    flex: 0 0 auto;
+    background: #FFF;
+    border-top: 1px solid $gy;
+    &__logo{
+        display: inline-block;
+        width: 120px;
+        img{
+            @extend %fw-img;
+        }
+    }
+    &__txt{
+        font-size: 15px;
+        line-height: (18/15);
+    }
+    @media(max-width: 1200px){
+        
+    }
+}
+
+.foot-nav{
+    list-style: none;
+    display: flex;
+    &__item{
+        flex: 0 1 auto;
+        margin-left: 35px;
+        @include fch(l);
+    }
+    &__a{
+        line-height: normal;
+        color: $be;
+        letter-spacing: 0.8px;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: .21s;
+        &:hover{
+            border-bottom-color: $be;
+        }
+    }
+}

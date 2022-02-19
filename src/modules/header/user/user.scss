@@ -1,0 +1,68 @@
+/*User*/
+.user{
+    position: relative;
+    &__button{
+        @extend %fwh;
+        background: none;
+        border: none;
+    }
+    &__thumb{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        vertical-align: middle;
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: auto;
+            min-height: 100%;
+        }
+    }
+    &__name{
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        text-align: right;
+    }
+    &__link{
+        line-height: normal;
+        text-decoration: none;
+        transition: .21s;
+        &:hover{
+            color: $rd;
+        }
+        &-sep{
+            line-height: normal;
+            margin: 0 3px;
+        }
+    }
+    &__bubble{
+        position: absolute;
+        width: 250px;
+        top: 45px;
+        right: 0;
+        padding: 25px;
+        background: #FFF;
+        box-shadow: 0 1px 11px rgba(0,0,0,.21);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .5s;
+        &.toggled{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    @media(max-width: 1000px){
+        &__bubble{
+            width: 100%;
+            top: 0;
+            margin-top: 20px;
+            box-shadow: none !important;
+            background: $gy !important;
+            &.toggled{
+                position: static;
+            }
+        }
+    }
+}

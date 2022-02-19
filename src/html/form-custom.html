@@ -1,0 +1,329 @@
+@@include('_head.html', {"title": "Form Custom"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html')
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+    
+    <div class="section">
+        <form id="custom-form" action="send.php" method="POST" enctype="multipart/form-data" class="form">
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2">What programming languages do you know?* (at least two language)</div>
+                </div>
+            </div>
+            
+            <div class="row form__chbox-group" data-min="2">
+                <div class="col-2">
+                    <div class="form__field custom-checkbox">
+                        <input type="checkbox" class="custom-checkbox__input">
+                        <label class="custom-checkbox__label">Java</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form__field custom-checkbox">
+                        <input id="php-choice" type="checkbox" class="custom-checkbox__input">
+                        <label class="custom-checkbox__label">PHP</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form__field custom-checkbox">
+                        <input type="checkbox" class="custom-checkbox__input">
+                        <label class="custom-checkbox__label">JavaScript</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form__field custom-checkbox">
+                        <input type="checkbox" class="custom-checkbox__input">
+                        <label class="custom-checkbox__label">C++</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form__field custom-checkbox">
+                        <input type="checkbox" data-target-elements="#other-lang-field" class="custom-checkbox__input">
+                        <label class="custom-checkbox__label">Other</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div id="other-lang-field" class="form__field hidden">
+                        <input type="text" data-required="true" placeholder="Other programming languages" data-hide-placeholder="input" class="form__text-input" value="">
+                        <div class="field-error-tip" data-error-text-2="Unacceptable symbols">Enter other programming languages</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2">Do you agree with privacy policy?*</div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="form__field custom-checkbox">
+                        <input type="checkbox" data-required="true" class="custom-checkbox__input">
+                        <label class="custom-checkbox__label">
+                            I agree with <a href="#">privacy policy</a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2">What is your favorite color?*</div>
+                </div>
+            </div>
+            
+            <div class="row form__radio-group">
+                <div class="col-3">
+                    <div class="form__field custom-radio">
+                        <input type="radio" name="radio-group" class="custom-radio__input">
+                        <label class="custom-radio__label">Red</label>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form__field custom-radio">
+                        <input type="radio" name="radio-group" class="custom-radio__input">
+                        <label class="custom-radio__label">Green</label>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form__field custom-radio">
+                        <input type="radio" name="radio-group" class="custom-radio__input">
+                        <label class="custom-radio__label">Blue</label>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form__field custom-radio">
+                        <input type="radio" name="radio-group" data-target-elements="#other-color-field" class="custom-radio__input">
+                        <label class="custom-radio__label">Other</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div id="other-color-field" class="form__field hidden">
+                        <input type="text" data-required="true" placeholder="Other color" class="form__text-input" value="">
+                        <div class="field-error-tip">Enter color</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2">What is your favorite animal?</div>
+                </div>
+            </div>
+            
+            
+            
+            <script id="duplicate-model" type="text/template">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form__field">
+                            
+                            <div class="field-error-tip">Select an animal</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form__field">
+                            
+                            <div class="field-error-tip">Select an animal</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div id="other-animal-field" class="form__field hidden">
+                            <input type="text" data-required="true" placeholder="Other animal" class="form__text-input" value="">
+                            <div class="field-error-tip">Enter other animal</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="button" class="js-remove-dupicated-form-btn">- Remove Fields</button>
+                    </div>
+                </div>
+            </script>
+            
+            <div id="duplicated-block">
+                <!-- duplicated -->
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" data-form-model="#duplicate-model" data-duplicated-dest="#duplicated-block" class="js-dupicate-form-btn">+ Add Fields</button>
+                </div>
+            </div>
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2">What kind of pet do you have?</div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6">
+                    <div class="form__field">
+                        
+                        <div class="field-error-tip">Select pets</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div id="other-pets-field" class="form__field hidden">
+                        <input type="text" data-required="true" placeholder="Other pets" class="form__text-input" value="">
+                        <div class="field-error-tip">Enter other pets</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2 mb-25">Where are you from?</div>
+                    <div class="txt c-gray">
+                        Get data from https://get.dealersair.com/api/geo/
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6">
+                    <div class="form__field countries">
+                        
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form__field cities">
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2">Оn which planet would you like to fly?</div>
+                    <div class="txt c-gray mb-25">
+                        Start typing
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="form__field">
+                        
+                        <div class="field-error-tip">Select a planet</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="form__field">
+                        
+                        <div class="field-error-tip">Select a planet</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2">What is your zodiac sign? (Latin)</div>
+                    <div class="txt c-gray mb-25">
+                        Default Virgo
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="form__field">
+                        
+                        <div class="field-error-tip">Select a Zodiac sign</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <div class="title-h2">Messages</div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-4">
+                    <div class="form__field">
+                        <div class="var-height-textarea">
+                            <div class="var-height-textarea__mirror"></div>
+                            <textarea name="message" placeholder="Message*" data-required="true" class="var-height-textarea__textarea form__textarea"></textarea>
+                        </div>
+                        <div class="field-error-tip" data-error-text-2="Unacceptable symbols">Enter your message</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form__field">
+                        <div class="var-height-textarea var-height-textarea_middle">
+                            <div>
+                                <div class="var-height-textarea__mirror"></div>
+                                <textarea name="question" placeholder="Your question*" data-required="true" class="var-height-textarea__textarea form__textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="field-error-tip" data-error-text-2="Unacceptable symbols">Enter your question</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form__field">
+                        <div class="custom-select">
+                            <div class="var-height-textarea var-height-textarea_wrap middle">
+                                <div class="middle__inner">
+                                    <div class="var-height-textarea__mirror"></div>
+                                    <textarea name="message-autocomplete" placeholder="Variant of the message*" data-required="true" class="custom-select__input custom-select__autocomplete var-height-textarea__textarea form__textarea"></textarea>
+                                </div>
+                            </div>
+                            <ul class="custom-select__options">
+                                <li>
+                                    <button type="button" class="custom-select__val">I won’t beg for your love: it’s laid Safely to rest, let the earth settle…</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="custom-select__val">Don’t expect my jealous letters Pouring in to plague your bride.</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="custom-select__val">I won’t beg for your love: it’s laid Safely to rest, let the earth settle… Don’t expect my jealous letters Pouring in to plague your bride. But let me, nevertheless, advise you: Give her my poems to read in bed, Give her my portraits to keep — it’s wise to Be kind like that when newly-wed.</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="field-error-tip">Enter variant of the message</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-25">
+                <div class="col-12">
+                    <button type="submit" class="form__submit button">Submit</button>
+                </div>
+            </div>
+            
+            <div class="form-error-tip">Ошибка заполнения полей формы</div>
+            
+        </form>
+    </div>
+    
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('../images/sprite-symbol.svg')
+
+@@include('_foot.html')
+
+
+</body>
+</html>

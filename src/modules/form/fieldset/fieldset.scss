@@ -1,0 +1,19 @@
+.fieldset{
+	position: relative;
+	display: none;
+	&__item{
+		transition: .21s;
+		position: static;
+		&_hidden{
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: none;
+		}
+	}
+	&.initialized{
+		display: block;
+	}
+}
