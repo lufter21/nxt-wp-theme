@@ -80,6 +80,7 @@ const modulesOn = [
 
 const firstModules = [
     'common-js',
+    'common-js/image',
     'header',
     'header/user',
     'header/menu',
@@ -268,7 +269,7 @@ gulp.task('build_symbol_sprite', function () {
         .pipe(svgSprite({
             mode: {
                 symbol: {
-                    sprite: '../src/images/sprite-symbol.svg',
+                    sprite: '../images/sprite-symbol.svg',
                 }
             }
         }))
@@ -298,6 +299,7 @@ gulp.task('ssd', function (done) {
     gulp.src('src/js/*.js')
         .pipe(babel())
         .on('error', notify.onError(function (err) { return err; }))
+        .pipe(gulpReplace('@version@', Date.now()))
         .pipe(gulp.dest(dist_path + '/js'))
         .pipe(notify({
             title: 'JS',
@@ -319,6 +321,7 @@ gulp.task('dist', function (done) {
     gulp.src('src/js/*.js')
         .pipe(babel())
         .on('error', notify.onError(function (err) { return err; }))
+        .pipe(gulpReplace('@version@', Date.now()))
         .pipe(gulp.dest(dist_path + '/js'))
         .pipe(notify({
             title: 'JS',
@@ -341,7 +344,7 @@ function CSS(dist) {
                 // .pipe(gulpReplace(/(?<!url.*)\.([a-z])/gi, '.' + cssPref + '$1'))
                 .pipe(gcmq())
                 .pipe(cleanCSS({ format: 'keep-breaks' }))
-                .pipe(rename('style.css'))
+                .pipe(rename('style.head.css'))
                 .pipe(gulp.dest(dist_path + '/css'))
                 .pipe(notify({
                     title: 'CSS',
@@ -354,7 +357,7 @@ function CSS(dist) {
                 // .pipe(gulpReplace(/(?<!url.*)\.([a-z])/gi, '.' + cssPref + '$1'))
                 .pipe(gcmq())
                 .pipe(cleanCSS({ format: 'keep-breaks' }))
-                .pipe(rename('styles.css'))
+                .pipe(rename('style.foot.css'))
                 .pipe(gulp.dest(dist_path + '/css'))
                 .pipe(notify({
                     title: 'CSS',
@@ -365,8 +368,7 @@ function CSS(dist) {
             gulp.src('src/sass/common-fst.scss')
                 .pipe(sourcemaps.init())
                 .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-                .pipe(gcmq())
-                .pipe(rename('style.css'))
+                .pipe(rename('style.head.css'))
                 .pipe(sourcemaps.write('.'))
                 .pipe(gulp.dest(dist_path + '/css'))
                 .pipe(notify({
@@ -378,8 +380,7 @@ function CSS(dist) {
             gulp.src('src/sass/common-sec.scss')
                 .pipe(sourcemaps.init())
                 .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-                .pipe(gcmq())
-                .pipe(rename('styles.css'))
+                .pipe(rename('style.foot.css'))
                 .pipe(sourcemaps.write('.'))
                 .pipe(gulp.dest(dist_path + '/css'))
                 .pipe(notify({

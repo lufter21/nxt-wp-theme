@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.head.css?v=1645412259147">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Parallax | startTemplate</title>
+</head>
+<body>
+
+<style>
+.parallax-element{
+	width: 50px;
+	height: 50px;
+	margin: 100px;
+}
+</style>
+
+<!--HEADER/-->
+<header id="header" class="header">
+    <div class="header__row row row_col-middle sm-row-col-fw">
+        <div class="col p-y-0">
+            <a href="index.html" class="header__logo"><img src="images/logo.svg" alt="logo"></a>
+        </div>
+        <div class="col col_grow p-y-0">
+            <div class="row row_col-middle sm-row-col-fw">
+                <nav class="col">
+                    <!--Menu/-->
+                    <ul class="menu">
+	<li class="menu__item menu__item_has-children ">
+		<a href="home.html" class="menu__a">Home</a>
+		<button class="menu__arr"></button>
+		<ul class="sub-menu menu__sub-menu">
+			<li class="sub-menu__item ">
+				<a href="fullscreen-scrolling.html" class="sub-menu__a">Full Screen Scroll</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="getcontentajax.html" class="sub-menu__a">Get Content Ajax</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="content.html" class="sub-menu__a">Content</a>
+			</li>
+		</ul>
+	</li>
+	<li class="menu__item ">
+		<a href="grid.html" class="menu__a">Grid</a>
+	</li>
+	<li class="menu__item menu__item_has-children ">
+		<a href="#" class="menu__a">Interface</a>
+		<button class="menu__arr"></button>
+		<ul class="sub-menu menu__sub-menu">
+			<li class="sub-menu__item ">
+				<a href="accordion.html" class="sub-menu__a">Accordion</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="anchors.html" class="sub-menu__a">Anchors</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="tab.html" class="sub-menu__a">Tabs</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="more.html" class="sub-menu__a">More</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="share.html" class="sub-menu__a">Share</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="bubble.html" class="sub-menu__a">Bubble</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="zoom.html" class="sub-menu__a">Zoom</a>
+			</li>
+		</ul>
+	</li> 
+	<li class="menu__item menu__item_has-children ">
+		<a href="#" class="menu__a">Elements</a>
+		<button class="menu__arr"></button>
+		<ul class="sub-menu menu__sub-menu">
+			<li class="sub-menu__item ">
+				<a href="buttons.html" class="sub-menu__a">Buttons</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="toggle.html" class="sub-menu__a">Toggle</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="icons.html" class="sub-menu__a">Icons</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="images.html" class="sub-menu__a">Images</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="video.html" class="sub-menu__a">Video</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="diagram.html" class="sub-menu__a">Diagram</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="numbers.html" class="sub-menu__a">Numbers</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="timer.html" class="sub-menu__a">Timer</a>
+			</li>
+		</ul>
+	</li>
+	<li class="menu__item menu__item_has-children ">
+		<a href="form.html" class="menu__a">Form</a>
+		<button class="menu__arr"></button>
+		<ul class="sub-menu menu__sub-menu">
+			<li class="sub-menu__item ">
+				<a href="form-maskinput.html" class="sub-menu__a">Maskinput</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="form-file.html" class="sub-menu__a">File</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="form-custom.html" class="sub-menu__a">Custom Form</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="form-select.html" class="sub-menu__a">Select</a>
+			</li>
+			<li class="sub-menu__item ">
+				<a href="form-autocomplete.html" class="sub-menu__a">Autocomplete</a>
+			</li>
+		</ul>
+	</li>
+	<li class="menu__item">
+		<a href="popup.html" class="menu__a">Popups</a>
+	</li>
+	<li class="menu__item">
+		<a href="anchors.html#section-4" class="js-anchor menu__a">Anch</a>
+	</li>
+</ul>
+                    <!--/Menu-->
+                </nav>
+                <div class="col">
+                    <!--Lang/-->
+                    <div class="lang">
+	<a href="@@lang_en" class="lang__link ">Eng</a><span class="lang__link-sep">/</span><a href="@@lang_ru" class="lang__link ">Rus</a>
+</div>
+                    <!--/Lang-->
+                </div>
+                <div class="col col_right p-0">
+                    <!--User/-->
+                    
+
+
+                    <!--/User-->
+                </div>
+            </div>
+        </div>
+        
+        <button class="js-close-menu menu-close-btn"></button>
+    </div>
+    <button class="js-open-menu open-menu-btn"><span></span><span></span><span></span><span></span></button>
+</header>
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+
+	<div id="sec1" class="section" style="background: gray; width: 90%; margin: auto;">
+		
+		<!-- <div class="parallax-element el1" data-delta-x="150" style="background: red"></div> -->
+		<div class="parallax-element el2" data-range-x="20,0" style="background: blue"></div>
+		<!-- <div class="parallax-element el3" style="background: green"></div> -->
+
+
+	</div>
+
+	<div id="sec2" class="section" style="background: gray; width: 90%; margin: auto;">
+		
+		<!-- <div class="parallax-element el1" data-delta-x="150" style="background: red"></div> -->
+		<!-- <div class="parallax-element el2" data-range-x="20,0" style="background: blue"></div> -->
+		<div class="parallax-element el3" style="background: green"></div>
+
+
+	</div>
+
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+<footer class="footer">
+    <div class="row row_wrp">
+        <div class="col">
+            <a href="#" class="footer__logo"><img src="images/logo.svg" alt="logo"></a>
+        </div>
+        <div class="col">
+            <ul class="foot-nav">
+                <li class="foot-nav__item"><a href="#" class="foot-nav__a">Item 1</a></li>
+                <li class="foot-nav__item"><a href="#" class="foot-nav__a">Item 2</a></li>
+                <li class="foot-nav__item"><a href="#" class="foot-nav__a">Item 3</a></li>
+            </ul>
+        </div>
+        <div class="col col_right">
+            <ul class="sc">
+                <li class="sc__item">
+                    <a href="#" class="v-btn"></a>
+                </li>
+                <li class="sc__item">
+                    <a href="#" class="f-btn"></a>
+                </li>
+                <li class="sc__item">
+                    <a href="#" class="o-btn"></a>
+                </li>
+                <li class="sc__item">
+                    <a href="#" class="t-btn"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row row_wrp">
+        <div class="col-12">
+            <div class="footer__txt">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+<div class="popup">
+    
+    <div id="popup-1" class="popup__window" style="max-width: 550px;">
+        <div class="popup__inner" style="height: 100px;">
+            <button class="js-popup-close popup-close-btn"></button>
+            <a href="#popup-2" data-popup="#popup-2" class="js-open-popup">POPUP 2</a>
+        </div> 
+    </div>
+    
+    <div id="popup-2" class="popup__window" style="max-width: 550px;">
+        <div class="popup__inner" style="height: 1300px;">
+            <button class="js-popup-close popup-close-btn"></button>
+            <a href="#message-popup-2" data-popup="#message-popup-2" class="js-open-popup">POPUP msg</a>
+        </div>
+    </div>
+    
+    <!--Media Popup/-->
+    <div id="media-popup" class="popup-media popup__window">
+        <div class="popup__inner">
+            <button class="js-popup-close popup-close-btn"></button>
+            
+            <div class="popup-media__box">
+                
+                <div id="popup-scroll-image" class="popup-media__img scrollbox">
+                    <div class="scrollbox__window">
+                        <div class="scrollbox__inner">
+                            <img src="#" class="popup-media__image" alt="photo">
+                        </div>
+                    </div>
+                    <div class="scrollbox__vertical-bar"></div>
+				    <div class="scrollbox__horizontal-bar"></div>
+                </div>
+                
+                <!-- <div class="popup-media__video">
+                    <a href="#" class="popup-media__play"></a>
+                    <iframe src="" class="popup-media__iframe" allowfullscreen></iframe>
+                </div> -->
+                
+                <div class="video popup-media__video">
+                    <div class="video__preview">
+                        <img src="#" alt="thumbnail" class="popup-media__preview">
+                    </div>
+                    <button type="button" data-src="" class="video__btn-play popup-media__btn-play"></button>
+                    <div class="video__frame"></div>
+                </div>
+                
+                <button class="popup-media__arr popup-media__arr_l" data-dir="prev"></button>
+                <button class="popup-media__arr popup-media__arr_r" data-dir="next"></button>
+
+                <button class="popup-media__zoom popup-media__zoom_min" data-dir="min">-</button>
+                <button class="popup-media__zoom popup-media__zoom_plus" data-dir="plus">+</button>
+                
+                <ul class="popup-media__dots"></ul>
+            </div>
+            
+            <div class="popup-media__caption">
+                <!-- caption -->
+            </div>
+        </div>
+    </div>
+    <!--/Media Popup-->
+    
+</div>
+
+<div class="popup" data-btn-close-only="true">
+    <!--Message Popup/-->
+    <div id="message-popup" class="popup-message popup__window">
+        <div class="popup__inner">
+            <button class="js-popup-close popup-close-btn"></button>
+            <div class="popup__message">
+                <!-- message html -->
+            </div>
+        </div>
+    </div>
+    <!--/Message Popup-->
+
+    <div id="message-popup-2" class="popup-message popup__window">
+        <div class="popup__inner">
+            <button class="js-popup-close popup-close-btn"></button>
+            <div class="popup__message">
+                Some message
+            </div>
+        </div>
+    </div>
+</div>
+<!--/POPUPs-->
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 448 512" id="facebook" xmlns="http://www.w3.org/2000/svg"><path d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"/></symbol><symbol viewBox="239.5 239.5 21 21" id="instagram" xmlns="http://www.w3.org/2000/svg"><path  d="M250.028 244.619a5.367 5.367 0 00-5.369 5.381 5.366 5.366 0 005.369 5.381 5.366 5.366 0 005.37-5.381 5.367 5.367 0 00-5.37-5.381zm0 8.879c-1.92 0-3.49-1.568-3.49-3.498s1.565-3.499 3.49-3.499a3.499 3.499 0 010 6.997zm6.842-9.1a1.251 1.251 0 11-2.505 0c0-.693.561-1.255 1.253-1.255.691 0 1.252.562 1.252 1.255zm3.557 1.274c-.08-1.682-.464-3.17-1.692-4.398-1.225-1.227-2.71-1.611-4.388-1.695-1.729-.099-6.912-.099-8.642 0-1.672.08-3.159.464-4.388 1.69-1.229 1.228-1.608 2.717-1.692 4.398-.098 1.732-.098 6.927 0 8.66.079 1.681.463 3.17 1.692 4.397s2.71 1.611 4.388 1.695c1.729.098 6.912.098 8.642 0 1.678-.079 3.163-.464 4.388-1.695 1.225-1.228 1.607-2.717 1.692-4.397.097-1.732.097-6.922 0-8.655zm-2.235 10.515a3.538 3.538 0 01-1.99 1.996c-1.379.547-4.65.422-6.174.422-1.523 0-4.799.121-6.173-.422a3.537 3.537 0 01-1.991-1.996c-.547-1.381-.421-4.66-.421-6.187 0-1.527-.122-4.81.421-6.187a3.536 3.536 0 011.991-1.995c1.378-.548 4.65-.421 6.173-.421 1.524 0 4.799-.122 6.174.421a3.534 3.534 0 011.99 1.995c.547 1.382.421 4.66.421 6.187 0 1.526.126 4.81-.421 6.187z"/></symbol><symbol viewBox="0 0 320 512" id="odnoklassniki" xmlns="http://www.w3.org/2000/svg"><path d="M275.1 334c-27.4 17.4-65.1 24.3-90 26.9l20.9 20.6 76.3 76.3c27.9 28.6-17.5 73.3-45.7 45.7-19.1-19.4-47.1-47.4-76.3-76.6L84 503.4c-28.2 27.5-73.6-17.6-45.4-45.7 19.4-19.4 47.1-47.4 76.3-76.3l20.6-20.6c-24.6-2.6-62.9-9.1-90.6-26.9-32.6-21-46.9-33.3-34.3-59 7.4-14.6 27.7-26.9 54.6-5.7 0 0 36.3 28.9 94.9 28.9s94.9-28.9 94.9-28.9c26.9-21.1 47.1-8.9 54.6 5.7 12.4 25.7-1.9 38-34.5 59.1zM30.3 129.7C30.3 58 88.6 0 160 0s129.7 58 129.7 129.7c0 71.4-58.3 129.4-129.7 129.4s-129.7-58-129.7-129.4zm66 0c0 35.1 28.6 63.7 63.7 63.7s63.7-28.6 63.7-63.7c0-35.4-28.6-64-63.7-64s-63.7 28.6-63.7 64z"/></symbol><symbol  viewBox="0 0 17 16" id="phone" xmlns="http://www.w3.org/2000/svg"><path d="M7.577 9.375C6.05 7.848 5.705 6.32 5.627 5.709a.548.548 0 01.158-.46l1.236-1.235a.552.552 0 00.078-.682L5.13.276a.552.552 0 00-.715-.201L1.257 1.563a.549.549 0 00-.303.548c.165 1.572.85 5.438 4.65 9.236 3.798 3.8 7.663 4.485 9.236 4.65a.549.549 0 00.548-.303l1.488-3.16a.552.552 0 00-.2-.713l-3.055-1.967a.552.552 0 00-.683.077l-1.236 1.236a.548.548 0 01-.459.158c-.611-.078-2.139-.423-3.666-1.95z" /><path d="M13.642 8.552A.552.552 0 0113.09 8a4.143 4.143 0 00-4.138-4.138.552.552 0 010-1.103A5.247 5.247 0 0114.193 8a.552.552 0 01-.551.552z" /><path d="M16.4 8.552A.552.552 0 0115.848 8a6.904 6.904 0 00-6.896-6.897.552.552 0 010-1.103 8.009 8.009 0 018 8 .552.552 0 01-.552.552z" /></symbol><symbol viewBox="0 0 512 512" id="twitter" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></symbol><symbol viewBox="0 0 576 512" id="vk" xmlns="http://www.w3.org/2000/svg"><path d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z"/></symbol></svg>
+
+<link rel="stylesheet" href="css/style.foot.css?v=1645412259147">
+
+<script>
+    var sJS = {
+        assetsDirPath: '',
+        deferScriptsStartLoading: function () {
+            // code...
+        },
+        deferScriptsBefore: [],
+        deferScriptsAfter: ['https://get.dealersair.com/api/geo/?key=lufter21'],
+    };
+</script>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/script.js?v=1645412259147"></script>
+
+</body>
+</html>

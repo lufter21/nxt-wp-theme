@@ -49,7 +49,8 @@ function nxt_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'nxt' ),
+			'header-menu' => esc_html__( 'Header', 'nxt' ),
+			'header-right-menu' => esc_html__( 'Header Right', 'nxt' ),
 		)
 	);
 
@@ -138,16 +139,34 @@ add_action( 'widgets_init', 'nxt_widgets_init' );
  * Enqueue scripts and styles.
  */
 function nxt_scripts() {
-	wp_enqueue_style( 'nxt-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'nxt-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'nxt-head-style', get_template_directory_uri() . '/css/style.head.css', array(), _S_VERSION );
+	// wp_enqueue_style( 'nxt-style', get_stylesheet_uri(), array(), _S_VERSION );
+	// wp_style_add_data( 'nxt-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'nxt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'nxt-script', get_template_directory_uri() . '/js/script.js', array(), _S_VERSION, true );
+	wp_add_inline_script(
+		'nxt-script', 
+		'var sJS = { assetsDirPath: "'. get_template_directory_uri() .'/", deferScriptsStartLoading: function () {}, deferScriptsBefore: [], deferScriptsAfter: [] };',
+		'before'
+	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'nxt_scripts' );
+
+function nxt_footer_styles() {
+    wp_enqueue_style( 'nxt-foot-style', get_template_directory_uri() . '/css/style.foot.css', array(), _S_VERSION );
+}
+add_action( 'get_footer', 'nxt_footer_styles' );
+
+/**
+ * Add blocks button to admin menu
+ */
+add_action( 'admin_menu', function () {
+	add_menu_page( esc_html__('Blocks', 'nxt'), esc_html__('Blocks', 'nxt'), 'manage_options', 'edit.php?post_type=wp_block', '', 'dashicons-block-default', 4 );
+});
 
 /**
  * Implement the Custom Header feature.
@@ -168,6 +187,11 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Menus customizer.
+ */
+require get_template_directory() . '/inc/custom-menu.php';
 
 /**
  * Load Jetpack compatibility file.

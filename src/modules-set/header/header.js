@@ -13,48 +13,46 @@
     'use strict';
 
     // fix header
-    document.addEventListener('DOMContentLoaded', function () {
-        const headerElem = document.getElementById('header');
+    const headerElem = document.getElementById('nxt-header');
 
-        let scrTop = 0,
-            scrAccUp = 0,
-            scrAccDown = 0;
+    let scrTop = 0,
+        scrAccUp = 0,
+        scrAccDown = 0;
 
-        function fixHeader() {
-            if (headerElem) {
-                if (window.pageYOffset > 21) {
-                    headerElem.classList.add('header_fixed');
+    function fixHeader() {
+        if (headerElem) {
+            if (window.pageYOffset > 21) {
+                headerElem.classList.add('nxt-header_fixed');
 
-                    if (window.pageYOffset > scrTop) {
-                        scrAccDown++;
-                        scrAccUp = 0;
-                    } else {
-                        scrAccUp++;
-                        scrAccDown = 0;
-                    }
-
-                    scrTop = window.pageYOffset;
-
-                    if (scrAccDown > 2 && window.pageYOffset > headerElem.offsetHeight) {
-                        headerElem.classList.add('header_hide');
-                    } else if (scrAccUp > 1) {
-                        headerElem.classList.remove('header_hide');
-                    }
-
-                } else if (
-                    !document.body.classList.contains('popup-is-opened') &&
-                    !document.body.classList.contains('mob-nav-is-opened')
-                ) {
-                    headerElem.classList.remove('header_fixed');
-                    headerElem.classList.remove('header_hide');
+                if (window.pageYOffset > scrTop) {
+                    scrAccDown++;
+                    scrAccUp = 0;
+                } else {
+                    scrAccUp++;
+                    scrAccDown = 0;
                 }
+
+                scrTop = window.pageYOffset;
+
+                if (scrAccDown > 2 && window.pageYOffset > headerElem.offsetHeight) {
+                    headerElem.classList.add('nxt-header_hide');
+                } else if (scrAccUp > 1) {
+                    headerElem.classList.remove('nxt-header_hide');
+                }
+
+            } else if (
+                !document.body.classList.contains('popup-is-opened') &&
+                !document.body.classList.contains('mob-nav-is-opened')
+            ) {
+                headerElem.classList.remove('nxt-header_fixed');
+                headerElem.classList.remove('nxt-header_hide');
             }
         }
+    }
 
-        fixHeader();
+    fixHeader();
 
-        window.addEventListener('scroll', fixHeader);
-    });
+    window.addEventListener('scroll', fixHeader);
 
     //mob menu
     MobNav = {
@@ -108,10 +106,10 @@
 
         init: function (options) {
             this.options = options;
-
+console.log('fff');
             document.addEventListener('click', (e) => {
                 const openElem = e.target.closest(options.openBtn);
-
+console.log(openElem);
                 if (openElem) {
                     e.preventDefault();
                     this.open(openElem);

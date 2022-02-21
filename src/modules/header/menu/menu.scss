@@ -4,7 +4,7 @@
     list-style: none;
     &__item{
         flex: 0 1 auto;
-        margin-left: 45px;
+        margin-left: em(35);
         @include fch(l);
         &_has-children{
             position: relative;
@@ -22,20 +22,19 @@
         }
         &_current{
             .menu__a{
-                border-bottom-color: $bk;
+                color: var(--menu-current);
             }
         }
     }
     &__a{
-        font-size: 18px;
-        font-weight: 500;
+        font-family: $f_menu;
+        font-weight: 700;
         line-height: normal;
         text-decoration: none;
-        border-bottom: 2px solid transparent;
-        transition: .21s;
-        @media(min-width: 1001px){
+        @media(hover: hover){
+            transition: .21s;
             &:hover{
-                color: $rd;
+                color: var(--menu-hover);
             }
         }
     }

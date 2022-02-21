@@ -13,7 +13,7 @@
     'use strict';
 
     // fix header
-    const headerElem = document.getElementById('header');
+    const headerElem = document.getElementById('nxt-header');
 
     let scrTop = 0,
         scrAccUp = 0,
@@ -22,7 +22,7 @@
     function fixHeader() {
         if (headerElem) {
             if (window.pageYOffset > 21) {
-                headerElem.classList.add('header_fixed');
+                headerElem.classList.add('nxt-header_fixed');
 
                 if (window.pageYOffset > scrTop) {
                     scrAccDown++;
@@ -35,17 +35,17 @@
                 scrTop = window.pageYOffset;
 
                 if (scrAccDown > 2 && window.pageYOffset > headerElem.offsetHeight) {
-                    headerElem.classList.add('header_hide');
+                    headerElem.classList.add('nxt-header_hide');
                 } else if (scrAccUp > 1) {
-                    headerElem.classList.remove('header_hide');
+                    headerElem.classList.remove('nxt-header_hide');
                 }
 
             } else if (
                 !document.body.classList.contains('popup-is-opened') &&
                 !document.body.classList.contains('mob-nav-is-opened')
             ) {
-                headerElem.classList.remove('header_fixed');
-                headerElem.classList.remove('header_hide');
+                headerElem.classList.remove('nxt-header_fixed');
+                headerElem.classList.remove('nxt-header_hide');
             }
         }
     }
@@ -106,10 +106,10 @@
 
         init: function (options) {
             this.options = options;
-
+console.log('fff');
             document.addEventListener('click', (e) => {
                 const openElem = e.target.closest(options.openBtn);
-
+console.log(openElem);
                 if (openElem) {
                     e.preventDefault();
                     this.open(openElem);

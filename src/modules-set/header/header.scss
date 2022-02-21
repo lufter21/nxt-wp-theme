@@ -1,13 +1,16 @@
-.header{
+.nxt-header{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 8;
     display: flex;
-    height: 100px;
+    height: em(130);
     align-items: center;
     transition: .5s;
+    .admin-bar &{
+        margin-top: 32px;
+    }
     &_fixed{
         background: #FFF;
         box-shadow: 0 1px 21px rgba(0,0,0,.21);
@@ -16,11 +19,15 @@
         box-shadow: none;
     } 
     &__logo{
-        display: inline-block;
-        width: 121px;
-        img{
-            @extend %fw-img;
+        a{
+            display: inline-block;
         }
+        img{
+            max-width: em(200);
+        }
+    }
+    &__row{
+        justify-content: space-between;
     }
     @media(min-width: 1001px){
         transform: translate3d(0, 0, 0);
@@ -29,11 +36,11 @@
         }
     }
     @media(max-width: 1000px){
-        height: 65px;
+        height: 70px;
         top: 0 !important;
         &__row{
             position: fixed;
-            top: 65px;
+            top: 0;
             bottom: 0;
             left: -100%;
             z-index: 3;
@@ -53,35 +60,45 @@
             left: 15px;
         }
     }
+    @media(max-width: 782px){
+        .admin-bar &{
+            margin-top: 46px;
+        }
+        &__row{
+            .admin-bar &{
+                top: 46px;
+            }
+        }
+    }
 }
 
 
 /*open menu*/
 .open-menu-btn{
     display: none;
-    width:28px;
-    height:21px;
+    width:24px;
+    height:24px;
     position: absolute;
     right: 15px;
     top: 50%;
     z-index: 4;
-    margin-top: -10px;
+    margin-top: -12px;
     background: none;
     border: none;
     -webkit-appearance: none;
     span{
-        height: 3px;
-        background: $rd;
+        height: 2px;
+        background: $bk;
         position: absolute;
         left: 0;
         width: 100%;
         transition: .21s;
     }
     span:first-child{
-        top: 0;
+        top: 5px;
     }
     span:last-child{
-        bottom: 0;
+        bottom: 5px;
     }
     span:nth-child(2),
     span:nth-child(3){

@@ -1,23 +1,15 @@
-<link rel="stylesheet" href="css/styles.css?v=@version@">
+<link rel="stylesheet" href="css/style.foot.css?v=@version@">
 
 <script>
-    function deferScriptsStartLoading() {
-
-    }
-
-    function deferScriptsHaveBeenLoaded() {
-
-    }
-
-    var headScript = 'js/script.head.js?v=@version@';
-    var deferScripts = [
-        'js/jquery-3.1.1.min.js',
-        'js/slick.min.js',
-        'js/script.defer.js?v=@version@',
-        'js/common.defer.js?v=@version@',
-        'js/interface.js?v=@version@',
-        'https://get.dealersair.com/api/geo/?key=lufter21'
-    ];
+    var sJS = {
+        assetsDirPath: '',
+        deferScriptsStartLoading: function () {
+            // code...
+        },
+        deferScriptsBefore: [],
+        deferScriptsAfter: ['https://get.dealersair.com/api/geo/?key=lufter21'],
+    };
 </script>
 
+<script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/script.js?v=@version@"></script>
