@@ -51,6 +51,7 @@ function nxt_setup() {
 		array(
 			'header-menu' => esc_html__( 'Header', 'nxt' ),
 			'header-right-menu' => esc_html__( 'Header Right', 'nxt' ),
+			'header-mob-bottom-menu' => esc_html__( 'Header Mobile Menu At Bottom', 'nxt' ),
 		)
 	);
 

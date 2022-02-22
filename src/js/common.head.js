@@ -24,7 +24,7 @@ const firstScreenEl = document.getElementById('first-screen');
 
 // menu
 try {
-    Menu.init('.menu__item_has-children', '.menu__sub-menu', 1000);
+    Menu.init('.menu__item_has-children', '.menu__sub-menu', 1200);
 } catch (error) {
     console.log(error);
 }

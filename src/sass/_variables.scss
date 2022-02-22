@@ -1,22 +1,31 @@
 // font family
-$ff: 'Montserrat', sans-serif;
+$ff: 'Courier New', sans-serif;
 $f_menu: 'Montserrat', sans-serif;
 $f_title: 'Montserrat', sans-serif;
 
 // colors
 $gy: #aaaaaa;
-$rd: #ff0000;
 $gn: #00ff00;
 $be: #0000ff;
 $yw: #ffff00;
 $vt: #895df7;
 
 $bk: #000000;
+$lgy: #E5E5E5;
+$rd: #D91E1E;
 $txt: #393939;
 $og: #CDA177;
 
 :root{
+    --wrap-width: 78.75rem;
+    --row-margin-out: -0.9375rem;
+    --column-padding: 0.9375rem;
     --txt-color: #393939;
+    --txt-font-family: 'Courier New', sans-serif;
     --menu-hover: #CDA177;
     --menu-current: #CDA177;
+    --menu-icon-color: #CDA177;
+    --border-color: #E5E5E5;
+    --mob-menu-color: rgba(10, 9, 13, 0.5);
+    --nav-font-family: 'Montserrat', sans-serif;
 }

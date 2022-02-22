@@ -18,10 +18,27 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<style>
 		@font-face {
+			font-display: swap;
+			font-family: 'Courier New';
+			src: url('<?php echo get_template_directory_uri(); ?>/fonts/courier-webfont.woff2') format('woff2'),
+			url('<?php echo get_template_directory_uri(); ?>/fonts/courier-webfont.woff') format('woff');
+			font-weight: 400;
+			font-style: normal;
+		}
+		@font-face {
+			font-display: swap;
+			font-family: 'Montserrat';
+			src: url('<?php echo get_template_directory_uri(); ?>/fonts/montserrat-medium-webfont.woff2') format('woff2'),
+			url('<?php echo get_template_directory_uri(); ?>/fonts/montserrat-medium-webfont.woff') format('woff');
+			font-weight: 500;
+			font-style: normal;
+		}
+		@font-face {
+			font-display: swap;
 			font-family: 'Montserrat';
 			src: url('<?php echo get_template_directory_uri(); ?>/fonts/montserrat-bold-webfont.woff2') format('woff2'),
 			url('<?php echo get_template_directory_uri(); ?>/fonts/montserrat-bold-webfont.woff') format('woff');
-			font-weight: bold;
+			font-weight: 700;
 			font-style: normal;
 		}
 	</style>

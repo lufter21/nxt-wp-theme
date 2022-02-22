@@ -13,10 +13,8 @@
     @extend %icon;
     width: 1em;
     height: 1em;
-    margin-right: em(20);
-    vertical-align: middle;
     svg{
-        fill: $og;
+        fill: var(--menu-icon-color);
     }
     &::before{
         display: none;

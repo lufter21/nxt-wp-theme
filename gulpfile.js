@@ -25,18 +25,18 @@ const modulesOn = [
     'common-js/template',
     'common-js/image',
     'header',
-    'header/user',
+    // 'header/user',
     'header/menu',
-    'header/lang',
-    'fsscroll',
-    'screens',
-    'screens2',
-    'scrollsmooth',
+    // 'header/lang',
+    // 'fsscroll',
+    // 'screens',
+    // 'screens2',
+    // 'scrollsmooth',
     'toggle',
-    'flex-image',
-    'cover-image',
+    // 'flex-image',
+    // 'cover-image',
     'lazy-load',
-    'video',
+    // 'video',
     'popup',
     'popup/media', // popup media video needs video module
     'form/validate',
@@ -52,29 +52,29 @@ const modulesOn = [
     'form/number',
     'form',
     'accord',
-    'ajax',
-    'more',
-    'tab',
-    'alert',
-    'tooltip',
+    // 'ajax',
+    // 'more',
+    // 'tab',
+    // 'alert',
+    // 'tooltip',
     'anchor',
-    'diagram',
+    // 'diagram',
     'numberspin',
-    'share',
-    'timer',
+    // 'share',
+    // 'timer',
     'footer',
-    'getcontentajax',
-    'animation',
-    'frames-animate',
-    'webgl',
-    'mouseparallax',
-    'scrollbox',
-    'floatslider',
+    // 'getcontentajax',
+    // 'animation',
+    // 'frames-animate',
+    // 'webgl',
+    // 'mouseparallax',
+    // 'scrollbox',
+    // 'floatslider',
     'slickslider',
-    'zoom',
-    'cursor',
-    'spa',
-    'drag-n-drop',
+    // 'zoom',
+    // 'cursor',
+    // 'spa',
+    // 'drag-n-drop',
     'fix-on-scroll'
 ];
 
@@ -161,7 +161,7 @@ gulp.task('clean_js_folder', function () {
 
 gulp.task('dev', gulp.series('copy_modules', 'clean_modules_folder', 'include_modules', 'clean_js_folder', function (done) {
     // html dev
-    HTML(['src/html/**/*.*', '!src/html/**/_*.html']);
+    // HTML(['src/html/**/*.*', '!src/html/**/_*.html']);
 
     // build scss
     const firstCssCode = firstCssSrc.map(src => '@import "' + src + '"').join('; ');
@@ -218,16 +218,16 @@ gulp.task('dev', gulp.series('copy_modules', 'clean_modules_folder', 'include_mo
     }));
 
     // watch html
-    const htmlWatcher = gulp.watch(['src/html/**/*.*', '!src/html/**/_*.html']);
+    // const htmlWatcher = gulp.watch(['src/html/**/*.*', '!src/html/**/_*.html']);
 
-    htmlWatcher.on('change', function (path) {
-        return HTML([path, '!src/html/**/_*.html']);
-    });
+    // htmlWatcher.on('change', function (path) {
+    //     return HTML([path, '!src/html/**/_*.html']);
+    // });
 
-    gulp.watch(['src/html/**/_*.html'].concat(modulesOn.map((m) => 'src/modules/' + m + '/*.html')), gulp.series(function (done) {
-        HTML(['src/html/**/*.*', '!src/html/**/_*.html']);
-        done();
-    }));
+    // gulp.watch(['src/html/**/_*.html'].concat(modulesOn.map((m) => 'src/modules/' + m + '/*.html')), gulp.series(function (done) {
+    //     HTML(['src/html/**/*.*', '!src/html/**/_*.html']);
+    //     done();
+    // }));
 
     done();
 }));
@@ -311,7 +311,7 @@ gulp.task('ssd', function (done) {
 
 // DISTRIBUTION ALL
 gulp.task('dist', function (done) {
-    HTML(['src/html/**/*.*', '!src/html/**/_*.*'], true);
+    // HTML(['src/html/**/*.*', '!src/html/**/_*.*'], true);
 
     CSS(true);
 
@@ -423,30 +423,30 @@ function JS(isFirst, src, dist) {
 }
 
 // html
-function HTML(src, dist) {
-    if (dist) {
-        return gulp.src(src, { base: 'src/html/' })
-            .pipe(fileinclude())
-            .on('error', notify.onError(function (err) { return err; }))
-            // .pipe(gulpReplace(/class="([\w\s-]+)"/gi, function (match, p1, offset, string) {
-            //     return 'class="' + p1.replace(/([\w-]+)/gi, cssPref + '$1') + '"';
-            // }))
-            .pipe(gulpReplace('@version@', Date.now()))
-            .pipe(gulp.dest(dist_path))
-            .pipe(notify({
-                title: 'HTML',
-                message: 'Dist HTML'
-            }));
-    } else {
-        return gulp.src(src, { base: 'src/html/' })
-            .pipe(fileinclude())
-            .on('error', notify.onError(function (err) { return err; }))
-            .pipe(gulpReplace('@version@', Date.now()))
-            .pipe(gulp.dest(dist_path))
-            .pipe(notify({
-                onLast: true,
-                title: 'HTML',
-                message: 'HTML has been Compiled!'
-            }));
-    }
-}
+// function HTML(src, dist) {
+//     if (dist) {
+//         return gulp.src(src, { base: 'src/html/' })
+//             .pipe(fileinclude())
+//             .on('error', notify.onError(function (err) { return err; }))
+//             // .pipe(gulpReplace(/class="([\w\s-]+)"/gi, function (match, p1, offset, string) {
+//             //     return 'class="' + p1.replace(/([\w-]+)/gi, cssPref + '$1') + '"';
+//             // }))
+//             .pipe(gulpReplace('@version@', Date.now()))
+//             .pipe(gulp.dest(dist_path))
+//             .pipe(notify({
+//                 title: 'HTML',
+//                 message: 'Dist HTML'
+//             }));
+//     } else {
+//         return gulp.src(src, { base: 'src/html/' })
+//             .pipe(fileinclude())
+//             .on('error', notify.onError(function (err) { return err; }))
+//             .pipe(gulpReplace('@version@', Date.now()))
+//             .pipe(gulp.dest(dist_path))
+//             .pipe(notify({
+//                 onLast: true,
+//                 title: 'HTML',
+//                 message: 'HTML has been Compiled!'
+//             }));
+//     }
+// }

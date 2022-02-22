@@ -11,6 +11,7 @@
 if( is_admin() ){
     add_filter( 'wp_setup_nav_menu_item', function ($menu_item) {
         $menu_item->icon = get_post_meta( $menu_item->ID, '_menu_item_icon', true );
+        $menu_item->target_hide = get_post_meta( $menu_item->ID, '_menu_item_target_hide', true );
         return $menu_item;
     });
 
@@ -18,6 +19,11 @@ if( is_admin() ){
         if ( is_array( $_REQUEST['menu-item-icon']) ) {
             $icon_value = $_REQUEST['menu-item-icon'][$menu_item_db_id];
             update_post_meta( $menu_item_db_id, '_menu_item_icon', $icon_value );
+        }
+
+        if ( is_array( $_REQUEST['menu-item-target-hide']) ) {
+            $tg_hide_value = $_REQUEST['menu-item-target-hide'][$menu_item_db_id];
+            update_post_meta( $menu_item_db_id, '_menu_item_target_hide', $tg_hide_value );
         }
     }, 10, 2);
 
@@ -196,6 +202,12 @@ if( is_admin() ){
                             <input type="text" id="edit-menu-item-icon-<?php echo $item_id; ?>" class="widefat edit-menu-item-icon" name="menu-item-icon[<?php echo $item_id; ?>]" value="<?php echo esc_attr( $menu_item->icon ); ?>" />
                         </label>
                     </p>
+                    <p class="field-link-target description">
+                        <label for="edit-menu-item-target-hide-<?php echo $item_id; ?>">
+                            <input type="checkbox" id="edit-menu-item-target-hide-<?php echo $item_id; ?>" value="_blank" name="menu-item-target-hide[<?php echo $item_id; ?>]"<?php checked( $menu_item->target_hide, '_blank' ); ?> />
+                            <?php _e( 'Hide Navigation Label' ); ?>
+                        </label>
+                    </p>
                     
                     <p class="field-title-attribute field-attr-title description description-wide">
                         <label for="edit-menu-item-attr-title-<?php echo $item_id; ?>">
@@ -332,7 +344,7 @@ class Custom_Header_Menu extends Walker_Nav_Menu {
 		}
 		$indent = str_repeat( $t, $depth );
 
-		$classes = array( 'sub-menu', 'menu__sub-menu' );
+		$classes = array( 'sub-menu', 'nxt-menu__sub-menu' );
 
 		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
@@ -358,16 +370,16 @@ class Custom_Header_Menu extends Walker_Nav_Menu {
 
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
 
-		$menu_item_class = ($depth) ? 'sub-menu__item ' : 'menu__item ';
+		$menu_item_class = ($depth) ? 'nxt-sub-menu__item ' : 'nxt-menu__item ';
 
 		if (!$depth && !empty($args->walker->has_children)) {
-			$menu_item_class .= 'menu__item_has-children ';
+			$menu_item_class .= 'nxt-menu__item_has-children ';
 		}
 
 		if ($depth && in_array('current-menu-item', $classes)) {
-			$menu_item_class .= 'sub-menu__item_current ';
+			$menu_item_class .= 'nxt-sub-menu__item_current ';
 		} elseif (!$depth && in_array('current-menu-item', $classes)) {
-			$menu_item_class .= 'menu__item_current ';
+			$menu_item_class .= 'nxt-menu__item_current ';
 		}
 
 		$class_names = $class_names ? ' class="'. $menu_item_class . esc_attr( $class_names ) . '"' : '';
@@ -394,22 +406,30 @@ class Custom_Header_Menu extends Walker_Nav_Menu {
 		}
 
         $icon = get_post_meta( $item->ID, '_menu_item_icon', true );
+        $target_hide = get_post_meta( $item->ID, '_menu_item_target_hide', true );
 
 		$title = apply_filters( 'the_title', $item->title, $item->ID );
 
 		$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
-		$menu_a_class = ($depth) ? 'sub-menu__a' : 'menu__a';
+		$menu_a_class = ($depth) ? 'nxt-sub-menu__a' : 'nxt-menu__a';
 
 		$item_output = $args->before;
 
-		if (!empty($icon)) {
+		$item_output .= '<a'. $attributes .' class="'. $menu_a_class .'">';
+
+        if (!empty($icon) && $target_hide) {
+            $item_output .= '<i class="nxt-menu-icon"><svg><use xlink:href="'. get_template_directory_uri() . '/images/sprite-symbol.svg#'. $icon .'"></use></svg></i>';
+        } else {
+            $item_output .= $args->link_before . $title . $args->link_after;
+        }
+
+		$item_output .= '</a>'.((!$depth) ? ' <button class="nxt-menu__arr"></button>' : '');
+
+        if (!empty($icon) && !$target_hide) {
             $item_output .= '<i class="nxt-menu-icon"><svg><use xlink:href="'. get_template_directory_uri() . '/images/sprite-symbol.svg#'. $icon .'"></use></svg></i>';
         }
 
-		$item_output .= '<a'. $attributes .' class="'. $menu_a_class .'">';
-		$item_output .= $args->link_before . $title . $args->link_after;
-		$item_output .= '</a>'.((!$depth) ? ' <button class="menu__arr"></button>' : '');
 		$item_output .= $args->after;
 
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );

@@ -1,19 +1,21 @@
 /*menu*/
-.menu{
+.nxt-menu{
     display: flex;
     list-style: none;
     &__item{
         flex: 0 1 auto;
         margin-left: em(35);
         @include fch(l);
+        display: flex;
+        align-items: center;
         &_has-children{
             position: relative;
-            .menu__arr{
+            .nxt-menu__arr{
                 display: inline-block;
             }
             @media(min-width: 1001px){
                 &:hover{
-                    .menu__sub-menu{
+                    .nxt-menu__sub-menu{
                         visibility: visible;
                         opacity: 1;
                     }
@@ -21,16 +23,22 @@
             }
         }
         &_current{
-            .menu__a{
+            .nxt-menu__a{
                 color: var(--menu-current);
             }
         }
+        .nxt-menu-icon{
+            order: -1;
+            margin-right: em(20);
+        }
     }
     &__a{
-        font-family: $f_menu;
         font-weight: 700;
         line-height: normal;
         text-decoration: none;
+        .nxt-menu-icon{
+            margin: 0;
+        }
         @media(hover: hover){
             transition: .21s;
             &:hover{
@@ -51,22 +59,47 @@
         transform: rotate(-45deg);
         background: none;
     }
-    @media(max-width: 1000px){
-        flex-direction: column;
-        &__item{
-            text-align: center;
-            margin: 25px 0 0;
-            &_has-children{
-                .menu__a{
-                    margin-left: 21px;
+    @media(max-width: 1200px){
+        &:not(.nxt-menu_nowrap){
+            flex-direction: column;
+            .nxt-menu__item{
+                margin: 0;
+                border-bottom: 1px solid var(--border-color);
+                &_has-children{
+                    .nxt-menu__a{
+                        margin-left: 21px;
+                    }
+                }
+                &_current{
+                    border-bottom-color: var(--menu-current);
+                }
+                .nxt-header__nav-right &{
+                    justify-content: center;
+                    border: none;
                 }
             }
+            .nxt-menu__a{
+                display: inline-block;
+                font-size: 18px;
+                font-weight: 500;
+                padding: 12px 0;
+                width: 100%;
+                color: var(--mob-menu-color);
+                .nxt-header__nav-right &{
+                    font-size: 16px;
+                    font-family: var(--txt-font-family);
+                    width: auto;
+                }
+            }
+        }
+        &_nowrap{
+            justify-content: center;
         }
     }
 }
 
 /*sub menu*/
-.sub-menu{
+.nxt-sub-menu{
     list-style: none;
     width: 6000%;
     padding: 24px 0 16px 3000%;
@@ -74,7 +107,7 @@
     left: -3000%;
     transition: .3s;
     
-    @media(min-width: 1001px){
+    @media(min-width: 1201px){
         position: absolute;
         visibility: hidden;
         opacity: 0;
@@ -94,7 +127,7 @@
         }
         
         &_current{
-            .sub-menu__a{
+            .nxt-sub-menu__a{
                 border-bottom-color: $bk;
             }
         }

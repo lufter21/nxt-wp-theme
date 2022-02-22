@@ -27,7 +27,14 @@
         }
     }
     &__row{
-        justify-content: space-between;
+        flex-grow: 1;
+    }
+    &__nav{
+        display: flex;
+        justify-content: flex-end;
+        &_center{
+            justify-content: center;
+        }
     }
     @media(min-width: 1001px){
         transform: translate3d(0, 0, 0);
@@ -42,15 +49,16 @@
             position: fixed;
             top: 0;
             bottom: 0;
-            left: -100%;
+            left: 0;
             z-index: 3;
             width: 100%;
             overflow: auto;
             align-content: flex-start;
             background: #FFF;
             transition: .21s;
+            transform: translateX(-100%);
             .opened &{
-                left: 0;
+                transform: translateX(0);
             }
         }
         &__logo{
@@ -58,6 +66,11 @@
             position: fixed;
             top: 10px;
             left: 15px;
+        }
+        &__nav{
+            .menu{
+                flex: 1 1 100%;
+            }
         }
     }
     @media(max-width: 782px){
@@ -70,6 +83,16 @@
             }
         }
     }
+    @media(max-width: 600px){
+        &_fixed{
+            .admin-bar &{
+                margin-top: 0;
+                .nxt-header__row{
+                    top: 0;
+                }
+            }
+        }
+    }
 }
 
 
@@ -79,9 +102,9 @@
     width:24px;
     height:24px;
     position: absolute;
-    right: 15px;
+    left: 15px;
     top: 50%;
-    z-index: 4;
+    z-index: 2;
     margin-top: -12px;
     background: none;
     border: none;
@@ -92,6 +115,7 @@
         position: absolute;
         left: 0;
         width: 100%;
+        border-radius: 2px;
         transition: .21s;
     }
     span:first-child{
@@ -102,7 +126,7 @@
     }
     span:nth-child(2),
     span:nth-child(3){
-        top: 9px;
+        top: 11px;
     }
     &.opened{
         span:first-child,
@@ -123,21 +147,19 @@
 
 /*close menu*/
 .menu-close-btn{
+    @extend %icon-btn;
     display: none;
-    width:21px;
-    height:21px;
+    width:24px;
+    height:24px;
     position: absolute;
-    left: 17px;
-    top: 19px;
-    background: none;
-    border: none;
-    -webkit-appearance: none;
+    right: 24px;
+    top: 24px;
     &:after,
-    &:before{
+    &:before {
         @extend %ab;
         position: absolute;
-        width: 130%;
-        height: 3px;
+        width: 100%;
+        height: 2px;
         background: $rd;
         left: -15%;
         top: 50%;

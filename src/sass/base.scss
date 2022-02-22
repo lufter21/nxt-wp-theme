@@ -1,6 +1,6 @@
 html, body {
-    font-family: $ff;
     font-size: 16px;
+    font-family: var(--txt-font-family);
     color: var(--txt-color);
     background: #ffffff;
     height: 100%;

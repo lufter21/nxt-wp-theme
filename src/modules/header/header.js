@@ -106,10 +106,10 @@
 
         init: function (options) {
             this.options = options;
-console.log('fff');
+
             document.addEventListener('click', (e) => {
                 const openElem = e.target.closest(options.openBtn);
-console.log(openElem);
+
                 if (openElem) {
                     e.preventDefault();
                     this.open(openElem);

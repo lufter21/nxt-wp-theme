@@ -10,10 +10,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-02-22 02:49+0000\n"
+"POT-Creation-Date: 2022-02-20 01:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: _s\n"
+"\n"
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
 
@@ -29,11 +30,11 @@ msgstr[1] ""
 msgid ", "
 msgstr ""
 
-#: functions.php:129
+#: functions.php:127
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:169
+#: functions.php:156
 msgid "Blocks"
 msgstr ""
 
@@ -57,18 +58,6 @@ msgstr ""
 #. %s: Name of current post. Only visible to screen readers
 #: inc/template-tags.php:100 template-parts/content-page.php:39
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
-
-#: functions.php:52
-msgid "Header"
-msgstr ""
-
-#: functions.php:54
-msgid "Header Mobile Menu At Bottom"
-msgstr ""
-
-#: functions.php:53
-msgid "Header Right"
 msgstr ""
 
 #. URI of the theme
@@ -104,10 +93,6 @@ msgstr ""
 #: inc/template-tags.php:70
 msgctxt "list item separator"
 msgid ", "
-msgstr ""
-
-#: template-parts/header-classic.php:73
-msgid "Menu"
 msgstr ""
 
 #: 404.php:30
@@ -164,7 +149,11 @@ msgstr ""
 msgid "Previous:"
 msgstr ""
 
-#: header copy.php:52
+#: functions.php:52
+msgid "Primary"
+msgstr ""
+
+#: header.php:49
 msgid "Primary Menu"
 msgstr ""
 
@@ -184,11 +173,11 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:125
 msgid "Sidebar"
 msgstr ""
 
-#: header copy.php:26
+#: header.php:26
 msgid "Skip to content"
 msgstr ""
 
