@@ -1660,6 +1660,7 @@ figcaption {
 .nxt-header_fixed {
   background: #FFF;
   box-shadow: 0 1px 21px rgba(0, 0, 0, 0.21);
+  height: 6.25em;
 }
 
 .nxt-header__logo a {
@@ -1907,6 +1908,7 @@ figcaption {
   .nxt-header__nav-right .nxt-menu:not(.nxt-menu_nowrap) .nxt-menu__a {
     font-size: 16px;
     font-family: var(--txt-font-family);
+    color: var(--txt-color);
     width: auto;
   }
   .nxt-menu_nowrap {
