@@ -1,8 +1,8 @@
 <?php
 /**
- * Nxt Theme Customizer
+ * nxt Theme Customizer
  *
- * @package Nxt
+ * @package nxt
  */
 
 /**
@@ -11,9 +11,11 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function nxt_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$transport = 'postMessage';
+	
+	$wp_customize->get_setting( 'blogname' )->transport = $transport;
+	$wp_customize->get_setting( 'blogdescription' )->transport = $transport;
+	$wp_customize->get_setting( 'header_textcolor' )->transport = $transport;
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
@@ -30,9 +32,48 @@ function nxt_customize_register( $wp_customize ) {
 				'render_callback' => 'nxt_customize_partial_blogdescription',
 			)
 		);
+		$wp_customize->selective_refresh->add_partial(
+			'navmenu',
+			array(
+				'selector'        => '.nxt-menu',
+				'render_callback' => 'nxt_customize_partial_navmenu',
+			)
+		);
 	}
+
+	$wp_customize->add_setting( 'example_prop' , array(
+        'default'   => '#565665',
+        'transport' => 'refresh',
+    ) );
+	$wp_customize->add_setting( 'example_prop2' , array(
+        'transport' => 'refresh',
+    ) );
+
+	$wp_customize->add_panel( 'example_panel', array(
+		'title' => __( 'Моя панель настроек', 'nxt' ),
+		'description' => 'descr', // Include html tags such as <p>.
+		'priority' => 3, // Mixed with top-level-section hierarchy.
+	  ) );
+
+	$wp_customize->add_section(
+        'example_section_one',
+        array(
+            'title' => 'Мои настройки',
+            'description' => 'Пример секции',
+            'priority' => 11,
+			'panel'=>'example_panel'
+        )
+    );
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
+		'label'      => __( 'Header Color', 'nxt' ),
+		'section'    => 'example_section_one',
+		'settings'   => 'example_prop',
+	) ) );
+	
 }
-add_action( 'customize_register', 'nxt_customize_register' );
+
+add_action( 'customize_register', 'nxt_customize_register');
 
 /**
  * Render the site title for the selective refresh partial.

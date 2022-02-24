@@ -36,7 +36,7 @@
 
 				if ( $nxt_description || is_customize_preview() ) :
 				?>
-				<div class="nxt-header__mob-menu-bloginfo">
+				<div class="nxt-header__mob-menu-bloginfo site-description">
 					<?php echo $nxt_description; ?>
 				</div>
 				<?php endif; ?>

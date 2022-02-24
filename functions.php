@@ -190,7 +190,7 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Menus customizer.
+ * Menu customizer.
  */
 require get_template_directory() . '/inc/custom-menu.php';
 
@@ -207,3 +207,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Required plugins activation
+ */
+require get_template_directory() . '/inc/tgm.php';
