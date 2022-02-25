@@ -1,3 +1,36 @@
-.menu-item{
-    color: var(--red);
+.nxt-headining-text-block{
+    font-size: em(18);
+    margin-top: em(160,18);
+    margin-bottom: em(160,18);
+    h2, h3, h4, h5, h6{
+        font-size: em(36,18);
+        font-weight: 700;
+        line-height: (43/36);
+        font-family: var(--title-font-family);
+    }
+    &__columns{
+        margin: em(90,18) 0 0;
+        line-height: (29/18);
+        div:first-child{
+            color: var(--txt-additional-color);
+            font-weight: 700;
+        }
+        p{
+            margin-top: em(30,18);
+            @include fch(t);
+        }
+        a{
+            @extend %link;
+            font-size: em(14,18);
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--txt-additional-color);
+            border-bottom: 1px solid var(--txt-additional-color);
+        }
+        &:not(.is-not-stacked-on-mobile){
+            & > .wp-block-column:not(:first-child){
+                margin-left: var(--columns-between-spacing-60);
+            }
+        }
+    }
 }

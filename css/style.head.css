@@ -114,7 +114,10 @@ body {
   --wrap-width: 78.75rem;
   --row-margin-out: -0.9375rem;
   --column-padding: 0.9375rem;
+  --columns-between-spacing: 1.875rem;
+  --columns-between-spacing-60: 3.75rem;
   --txt-color: #393939;
+  --txt-additional-color: #CDA177;
   --txt-font-family: 'Courier New', sans-serif;
   --menu-hover: #CDA177;
   --menu-current: #CDA177;
@@ -122,6 +125,7 @@ body {
   --border-color: #E5E5E5;
   --mob-menu-color: rgba(10, 9, 13, 0.5);
   --nav-font-family: 'Montserrat', sans-serif;
+  --title-font-family: 'Montserrat', sans-serif;
 }
 
 .nxt-menu-close-btn:after, .nxt-menu-close-btn:before, .paginate__prev::after, .paginate__next::after, .list li:before, .article ul li:before {
@@ -679,7 +683,7 @@ figcaption {
   max-height: 100%;
 }
 
-.nxt-wrp {
+.nxt-wrap {
   margin: 0 auto;
   width: 100%;
   max-width: var(--wrap-width);
@@ -687,7 +691,7 @@ figcaption {
 }
 
 @media (max-width: 1000px) {
-  .nxt-wrp {
+  .nxt-wrap {
     padding: 0 15px;
   }
 }

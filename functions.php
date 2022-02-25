@@ -157,17 +157,13 @@ function nxt_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'nxt_scripts' );
 
+/**
+ * Enqueue scripts and styles in footer.
+ */
 function nxt_footer_styles() {
     wp_enqueue_style( 'nxt-foot-style', get_template_directory_uri() . '/css/style.foot.css', array(), _S_VERSION );
 }
 add_action( 'get_footer', 'nxt_footer_styles' );
-
-/**
- * Add blocks button to admin menu
- */
-add_action( 'admin_menu', function () {
-	add_menu_page( esc_html__('Blocks', 'nxt'), esc_html__('Blocks', 'nxt'), 'manage_options', 'edit.php?post_type=wp_block', '', 'dashicons-block-default', 4 );
-});
 
 /**
  * Implement the Custom Header feature.

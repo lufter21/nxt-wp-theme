@@ -27,6 +27,14 @@
 		}
 		@font-face {
 			font-display: swap;
+			font-family: 'Courier New';
+			src: url('<?php echo get_template_directory_uri(); ?>/fonts/courier-bold-webfont.woff2') format('woff2'),
+			url('<?php echo get_template_directory_uri(); ?>/fonts/courier-bold-webfont.woff') format('woff');
+			font-weight: 700;
+			font-style: normal;
+		}
+		@font-face {
+			font-display: swap;
 			font-family: 'Montserrat';
 			src: url('<?php echo get_template_directory_uri(); ?>/fonts/montserrat-medium-webfont.woff2') format('woff2'),
 			url('<?php echo get_template_directory_uri(); ?>/fonts/montserrat-medium-webfont.woff') format('woff');
@@ -49,7 +57,7 @@
 <?php wp_body_open(); ?>
 
 <header id="nxt-header" class="nxt-header">
-	<div class="nxt-wrp">
+	<div class="nxt-wrap">
 		<?php /* get_template_part( 'template-parts/header', 'block' ); */ ?>
 		<?php get_template_part( 'template-parts/header', 'classic' ); ?>
 	</div>
