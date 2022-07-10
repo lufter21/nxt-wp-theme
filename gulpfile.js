@@ -1,5 +1,5 @@
 const gulp = require('gulp'),
-    sass = require('gulp-sass'),
+    sass = require('gulp-sass')(require('node-sass')),
     autoprefixer = require('gulp-autoprefixer'),
     gcmq = require('gulp-group-css-media-queries'),
     cleanCSS = require('gulp-clean-css'),
@@ -146,12 +146,7 @@ gulp.task('include_modules', function (done) {
         done();
     } else {
         return gulp.src(modulesOn.map((m) => 'src/modules-set/' + m + '/*.*'), { base: 'src/modules-set/' })
-            .pipe(gulp.dest('src/modules/'))
-            .pipe(notify({
-                onLast: true,
-                title: 'Custom Modules',
-                message: 'Custom modules have been included!'
-            }));
+            .pipe(gulp.dest('src/modules/'));
     }
 });
 
@@ -182,14 +177,12 @@ gulp.task('dev', gulp.series('copy_modules', 'clean_modules_folder', 'include_mo
 
     // copy common script
     gulp.src('src/js/*.js')
-        .pipe(gulp.dest(dist_path + '/js'))
-        .pipe(notify('Common script has been copied!'));
+        .pipe(gulp.dest(dist_path + '/js'));
 
     // import js assets
     if (jsAssets.length) {
         gulp.src(jsAssets)
-            .pipe(gulp.dest(dist_path + '/js'))
-            .pipe(notify('JS Assets have been imported!'));
+            .pipe(gulp.dest(dist_path + '/js'));
     }
 
     // watch css
@@ -212,8 +205,7 @@ gulp.task('dev', gulp.series('copy_modules', 'clean_modules_folder', 'include_mo
 
     gulp.watch('src/js/*.js', gulp.series(function (done) {
         gulp.src('src/js/*.js')
-            .pipe(gulp.dest(dist_path + '/js'))
-            .pipe(notify('Script has been Refreshed!'));
+            .pipe(gulp.dest(dist_path + '/js'));
         done();
     }));
 
@@ -257,11 +249,7 @@ gulp.task('build_image_sprite', function () {
             }
         }))
         .pipe(gulpReplace(dist_path + '/', ''))
-        .pipe(gulp.dest('.'))
-        .pipe(notify({
-            title: 'SVG',
-            message: 'SVG Sprites Image has been built!'
-        }));
+        .pipe(gulp.dest('.'));
 });
 
 gulp.task('build_symbol_sprite', function () {
@@ -273,11 +261,7 @@ gulp.task('build_symbol_sprite', function () {
                 }
             }
         }))
-        .pipe(gulp.dest('.'))
-        .pipe(notify({
-            title: 'SVG',
-            message: 'SVG Symbol Sprites had built!'
-        }));
+        .pipe(gulp.dest('.'));
 });
 
 gulp.task('svgs', gulp.series('build_image_sprite', 'build_symbol_sprite', function (done) {
@@ -300,11 +284,7 @@ gulp.task('ssd', function (done) {
         .pipe(babel())
         .on('error', notify.onError(function (err) { return err; }))
         .pipe(gulpReplace('@version@', Date.now()))
-        .pipe(gulp.dest(dist_path + '/js'))
-        .pipe(notify({
-            title: 'JS',
-            message: 'Dist Common Script'
-        }));
+        .pipe(gulp.dest(dist_path + '/js'));
 
     done();
 });
@@ -322,11 +302,7 @@ gulp.task('dist', function (done) {
         .pipe(babel())
         .on('error', notify.onError(function (err) { return err; }))
         .pipe(gulpReplace('@version@', Date.now()))
-        .pipe(gulp.dest(dist_path + '/js'))
-        .pipe(notify({
-            title: 'JS',
-            message: 'Dist Common Script'
-        }));
+        .pipe(gulp.dest(dist_path + '/js'));
 
     done();
 });
@@ -345,11 +321,7 @@ function CSS(dist) {
                 .pipe(gcmq())
                 .pipe(cleanCSS({ format: 'keep-breaks' }))
                 .pipe(rename('style.head.css'))
-                .pipe(gulp.dest(dist_path + '/css'))
-                .pipe(notify({
-                    title: 'CSS',
-                    message: '1 Dist Styles have been Compiled!'
-                }));
+                .pipe(gulp.dest(dist_path + '/css'));
 
             gulp.src('src/sass/common-sec.scss')
                 .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
@@ -358,11 +330,7 @@ function CSS(dist) {
                 .pipe(gcmq())
                 .pipe(cleanCSS({ format: 'keep-breaks' }))
                 .pipe(rename('style.foot.css'))
-                .pipe(gulp.dest(dist_path + '/css'))
-                .pipe(notify({
-                    title: 'CSS',
-                    message: '2 Dist Styles have been Compiled!'
-                }));
+                .pipe(gulp.dest(dist_path + '/css'));
 
         } else {
             gulp.src('src/sass/common-fst.scss')
@@ -370,24 +338,14 @@ function CSS(dist) {
                 .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
                 .pipe(rename('style.head.css'))
                 .pipe(sourcemaps.write('.'))
-                .pipe(gulp.dest(dist_path + '/css'))
-                .pipe(notify({
-                    onLast: true,
-                    title: 'CSS',
-                    message: '1 Styles have been Compiled!'
-                }));
+                .pipe(gulp.dest(dist_path + '/css'));
 
             gulp.src('src/sass/common-sec.scss')
                 .pipe(sourcemaps.init())
                 .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
                 .pipe(rename('style.foot.css'))
                 .pipe(sourcemaps.write('.'))
-                .pipe(gulp.dest(dist_path + '/css'))
-                .pipe(notify({
-                    onLast: true,
-                    title: 'CSS',
-                    message: '2 Styles have been Compiled!'
-                }));
+                .pipe(gulp.dest(dist_path + '/css'));
         }
     }, 321);
 }
@@ -403,22 +361,13 @@ function JS(isFirst, src, dist) {
             .pipe(babel())
             .on('error', notify.onError(function (err) { return err; }))
             .pipe(concat(isFirst ? 'script.head.js' : 'script.defer.js'))
-            .pipe(gulp.dest(dist_path + '/js'))
-            .pipe(notify({
-                title: 'JS',
-                message: 'Dist Scripts'
-            }));
+            .pipe(gulp.dest(dist_path + '/js'));
     } else {
         gulp.src(src)
             .pipe(sourcemaps.init())
             .pipe(concat(isFirst ? 'script.head.js' : 'script.defer.js'))
             .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest(dist_path + '/js'))
-            .pipe(notify({
-                onLast: true,
-                title: 'JS',
-                message: 'Scripts have been Compiled!'
-            }));
+            .pipe(gulp.dest(dist_path + '/js'));
     }
 }
 

@@ -1,126 +1,205 @@
-.nxt-wrap{
+.nxt-wrap {
     margin: 0 auto;
     width: 100%;
-    max-width: var(--wrap-width);
-    padding: 0 var(--column-padding);
-    @media(max-width: 1000px){
-        padding: 0 15px;
-    }
+    max-width: var(--nxt-content-width);
+    padding: 0 var(--nxt-column-padding);
 }
 
-.row{
+@mixin row {
     display: flex;
     flex: 1 1 100%;
     flex-wrap: wrap;
-    margin: 0 var(--row-margin-out);
-    &_nw{
+    margin: 0 var(--nxt-row-margin-out);
+
+    &_nw {
         flex-wrap: nowrap;
     }
-    &_column{
+
+    &_column {
         flex-direction: column;
     }
-    &_col-center{
+
+    &_col-center {
         justify-content: center;
     }
-    &_col-between{
+
+    &_col-between {
         justify-content: space-between;
     }
-    &_col-middle{
+
+    &_col-middle {
         align-items: center;
     }
-    &_col-bottom{
+
+    &_col-bottom {
         align-items: flex-end;
     }
-    &_gap60{
+
+    &_gap60 {
         margin: 0 em(-30);
     }
-    @media(max-width: 1200px){
+
+    /* @media(max-width: 1200px) {
         margin-left: -15px;
         margin-right: -15px;
-        & > [class*="col"]{
+
+        &>[class*="col"] {
             padding-left: 15px;
             padding-right: 15px;
         }
-        &-md_col-center{
+
+        &-md_col-center {
             justify-content: center;
         }
     }
-    @media(min-width: 1001px){
-        &_md-x-nw{
+
+    @media(min-width: 1001px) {
+        &_md-x-nw {
             flex-wrap: nowrap;
         }
     }
-    @media(max-width: 1000px){
-        &_sm-2cols{
-            .col{
+
+    @media(max-width: 1000px) {
+        &_sm-2cols {
+            .col {
                 flex: 0 0 50%;
                 max-width: 50%;
             }
         }
-        &-sm_col-center{
+
+        &-sm_col-center {
             justify-content: center;
         }
     }
-    @media(min-width: 751px){
-        &_sm-x-nw{
+
+    @media(min-width: 751px) {
+        &_sm-x-nw {
             flex-wrap: nowrap;
         }
-    }
+    } */
 }
 
 @mixin cols {
     flex: 0 1 auto;
     max-width: none;
-    padding: 0 var(--column-padding);
-    
-    &-fill{
+    padding: 0 var(--nxt-column-padding);
+
+    &-fill {
         flex: 1 1 100%;
         max-width: none;
-        padding: 0 var(--column-padding);
+        padding: 0 var(--nxt-column-padding);
     }
-    
+
     $cC: 12;
+
     @for $i from 1 through $cC {
-        &-#{$i}{
+        &-#{$i} {
             flex: 0 0 (100 / $cC) * $i * 1%;
             max-width: (100 / $cC) * $i * 1%;
-            padding: 0 var(--column-padding);
-            .row_gap60 > &{
+            padding: 0 var(--nxt-column-padding);
+
+            .row_gap60>& {
                 padding: 0 rem(30);
             }
-            @if $i == $cC {
+
+            @if $i==$cC {
                 margin-left: 0;
                 margin-right: 0;
             }
         }
-        &-offset-#{$i}{
+
+        &-offset-#{$i} {
             margin-left: (100 / $cC) * $i * 1%;
         }
     }
-    
-    &_center{
+
+    &_center {
         margin-left: auto;
         margin-right: auto;
     }
-    &_middle{
+
+    &_middle {
         align-self: center;
     }
-    &_right{
+
+    &_right {
         margin-left: auto;
     }
-    &_grow{
+
+    &_grow {
         flex-grow: 1;
     }
-    &_first{
+
+    &_first {
         order: -1;
     }
 }
 
-.col{
+.col {
     @include cols;
 }
 
-@media(max-width: 1600px){
+@media(min-width: rem(640)) {
+    .nxt-sm {
+        &-row {
+            @include row;
+        }
+
+        &-col {
+            @include cols;
+        }
+    }
+}
+
+@media(min-width: rem(768)) {
+    .nxt-md {
+        &-row {
+            @include row;
+        }
+
+        &-col {
+            @include cols;
+        }
+    }
+}
+
+@media(min-width: rem(1024)) {
+    .nxt-lg {
+        &-row {
+            @include row;
+        }
+
+        &-col {
+            @include cols;
+        }
+    }
+}
+
+@media(min-width: rem(1280)) {
+    .nxt-xl {
+        &-row {
+            @include row;
+        }
+
+        &-col {
+            @include cols;
+        }
+    }
+}
+
+@media(min-width: rem(1536)) {
+    .nxt-xxl {
+        &-row {
+            @include row;
+        }
+
+        &-col {
+            @include cols;
+        }
+    }
+}
+
+/* @media(max-width: 1600px){
     .lg{
         &-col{
             @include cols;
@@ -184,4 +263,4 @@
             }
         }
     }
-}
+} */

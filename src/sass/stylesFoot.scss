@@ -6,13 +6,13 @@
         font-size: em(36,18);
         font-weight: 700;
         line-height: (43/36);
-        font-family: var(--title-font-family);
+        font-family: var(--nxt-title-font-family);
     }
     &__columns{
         margin: em(90,18) 0 0;
         line-height: (29/18);
         div:first-child{
-            color: var(--txt-additional-color);
+            color: var(--nxt-txt-additional-color);
             font-weight: 700;
         }
         p{
@@ -24,12 +24,12 @@
             font-size: em(14,18);
             text-transform: uppercase;
             font-weight: 700;
-            color: var(--txt-additional-color);
-            border-bottom: 1px solid var(--txt-additional-color);
+            color: var(--nxt-txt-additional-color);
+            border-bottom: 1px solid var(--nxt-txt-additional-color);
         }
         &:not(.is-not-stacked-on-mobile){
             & > .wp-block-column:not(:first-child){
-                margin-left: var(--columns-between-spacing-60);
+                margin-left: var(--nxt-columns-between-spacing-60);
             }
         }
     }
