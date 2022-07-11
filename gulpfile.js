@@ -123,7 +123,7 @@ const srcFilter = function (ext, isFirst) {
     return src.filter(path => fs.existsSync(path));
 }
 
-const firstCssSrc = ['src/sass/reset.scss', 'variables', 'functions', 'extends', 'mixins', 'src/sass/base.scss', 'src/sass/button.scss', 'src/sass/icon.scss', 'src/sass/grid.scss'].concat(srcFilter('scss', true), 'src/sass/styleHead.scss');
+const firstCssSrc = ['src/sass/reset.scss', 'variables', 'functions', 'extends', 'mixins', 'src/sass/base.scss', 'src/sass/button.scss', 'src/sass/icon.scss'].concat(srcFilter('scss', true), 'src/sass/styleHead.scss');
 
 const secondCssSrc = ['variables', 'functions', 'extends', 'mixins'].concat(srcFilter('scss'), 'src/sass/stylesFoot.scss', 'src/sass/sprite.scss', 'src/sass/decor.scss', 'src/sass/class.scss');
 
